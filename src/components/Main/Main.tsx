@@ -1,4 +1,4 @@
-import styles from './Main.scss';
+import styles from './Main.module.scss';
 
 interface IProps {
   children: React.ReactNode;

@@ -1,5 +1,4 @@
-import styles from './Header.scss';
-import logo from "../../assets/images/prosept-logo.svg";
+import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
   return (

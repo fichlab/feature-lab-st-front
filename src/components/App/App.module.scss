@@ -1,4 +1,4 @@
-@import '../../constants/constants.scss';
+@import '../../constants/constants.module.scss';
 
 body {
   overflow: hidden;
@@ -10,7 +10,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: inherit;
-    font-family: $font-din;
+    font-family:Arial, Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

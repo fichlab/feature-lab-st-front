@@ -1,5 +1,4 @@
-import styles from "./App.scss";
-import "../../assets/fonts/fonts.scss";
+import styles from "./App.module.scss";
 import 'normalize.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from "../Header/Header";
