@@ -10,8 +10,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:css-modules/recommended",
-    // "prettier", // should be last
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended" // should be last
   ],
 
   "parserOptions": {
@@ -21,6 +20,8 @@
   },
 
   "rules": {
+    "import/prefer-default-export": 0, // use named imports/exports in projects
+    "@typescript-eslint/no-explicit-any": 2, // any is evil
     "react/react-in-jsx-scope": 0, // not necessary for new React
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }], // better for consistency
     "react/require-default-props": [
