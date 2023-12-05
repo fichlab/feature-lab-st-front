@@ -1,20 +1,20 @@
 const presets = [
   [
-    "@babel/preset-env",
+    '@babel/preset-env',
     {
       targets: {
-        edge: "17",
-        ie: "11",
-        firefox: "50",
-        chrome: "64",
-        safari: "11.1",
+        edge: '17',
+        ie: '11',
+        firefox: '50',
+        chrome: '64',
+        safari: '11.1',
       },
 
-      useBuiltIns: "entry",
+      useBuiltIns: 'entry',
     },
   ],
-  ["@babel/preset-react", { runtime: "automatic" }],
-  "@babel/preset-typescript",
+  ['@babel/preset-react', { runtime: 'automatic' }],
+  '@babel/preset-typescript',
 ];
 
 module.exports = { presets };
