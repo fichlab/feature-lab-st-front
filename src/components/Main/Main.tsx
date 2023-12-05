@@ -1,15 +1,12 @@
+import { FC } from 'react';
 import styles from './Main.module.scss';
 
 interface IProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-const Main: React.FC<IProps> = (props) => {
-  return (
-    <main className={styles.main}>
-      {props.children}
-    </main>
-  )
-}
+const Main: FC<IProps> = ({ children }) => {
+  return <main className={styles.main}>{children}</main>;
+};
 
 export default Main;
