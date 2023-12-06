@@ -1,0 +1,24 @@
+$white: #fff; // фон
+$dark-blue: #002d63; // текст
+$dark-blue-50: #8096b1; // То, что не должно сильно бросаться в глаза — иконки для исправления и т.п.
+$shadow: #002c6180; // Затемнение заднего фона
+$shadow-for-header: #ffffff80; // полупрозрачность заднего фона
+$white-60: #a8bed8; // Вместо полупрозрачного белого на тёмном фоне
+$electric: #0049d8; // Заголовки + фон контакты он же
+
+$radial-blue-center: $electric; // Подложки под кнопки и фото
+$radial-blue-45-center: #033e8773; // Подложки под кнопки и фото, если они не активны
+
+$error: #bf1700; // Ошибки
+$error-for-dark: #fa391f; // Ошибки на тёмном фоне
+
+// Gradient Кнопка на главном экране
+$gradient1: #0c3483;
+$gradient2: #4767a7;
+$gradient3: #a2b6df;
+$gradient4: #fff;
+
+// Gradient_bg Фон на главном экране
+$gradient-bg1: #0c3483;
+$gradient-bg2: #a2b6df;
+$gradient-bg3: #6b8cce;
