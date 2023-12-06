@@ -26,3 +26,15 @@
     url('../assets/fonts/Molot.woff2') format('woff2'),
     url('../assets/fonts/Molot.woff') format('woff');
 }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
