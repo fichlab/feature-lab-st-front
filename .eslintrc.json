@@ -31,6 +31,7 @@
     "jsx-a11y/click-events-have-key-events": 1, // keyboard events on invisible interactive divs
     "jsx-a11y/no-static-element-interactions": 1, // roles for all interactive divs
     "react/button-has-type": 1, // 'submit' is default so unexpected submit event can occure
+    "import/no-extraneous-dependencies": 0, // we know better where to install packages
     "css-modules/no-unused-class": [1, { "camelCase": true }],
     "css-modules/no-undef-class": [2, { "camelCase": true }]
   }
