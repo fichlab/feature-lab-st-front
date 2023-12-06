@@ -42,7 +42,9 @@ module.exports = (env) => {
               options: {
                 modules: {
                   auto: (resPath) => resPath.includes('.module.scss'),
-                  localIdentName: isDev ? '[local]--[hash:base64:5]' : '[hash:base64:8]',
+                  localIdentName: isDev
+                    ? '[path][name]__[local]--[hash:base64:5]'
+                    : '[hash:base64:8]',
                 },
               },
             },
