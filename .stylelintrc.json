@@ -3,5 +3,6 @@
   "rules": {
     "selector-class-pattern": null,
     "scss/double-slash-comment-whitespace-inside": "always"
-  }
+  },
+  "ignoreFiles": ["**/normalize.css"]
 }
