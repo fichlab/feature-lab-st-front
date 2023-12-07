@@ -1,31 +1,6 @@
-@use './normalize.css';
-
-@font-face {
-  font-family: 'Germano Regular';
-  font-style: normal;
-  font-display: swap;
-  src:
-    url('../assets/fonts/Germano-Regular.woff2') format('woff2'),
-    url('../assets/fonts/Germano-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'GOST type B';
-  font-style: normal;
-  font-display: swap;
-  src:
-    url('../assets/fonts/GOST_type_B.woff2') format('woff2'),
-    url('../assets/fonts/GOST_type_B.woff') format('woff');
-}
-
-@font-face {
-  font-family: Molot;
-  font-style: normal;
-  font-display: block;
-  src:
-    url('../assets/fonts/Molot.woff2') format('woff2'),
-    url('../assets/fonts/Molot.woff') format('woff');
-}
+@import './normalize.css';
+@import './variables/global';
+@import '../assets/fonts/fonts';
 
 ul,
 li {
