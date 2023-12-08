@@ -1,5 +1,3 @@
-@use '../../styles/variables/global';
-
 .header {
   display: flex;
   column-gap: 53px;
@@ -12,9 +10,22 @@
 
   background: linear-gradient(354deg, #fff0 4.84%, #ffffff80 95.76%);
 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  transition-property: all;
+
   &White {
     background: var(--white, #fff);
   }
+}
+
+.headerHidden {
+  transform: translate3d(0, -100%, 0);
+}
+
+.headerFixed {
+  position: sticky;
+  top: 0;
 }
 
 .logo {
