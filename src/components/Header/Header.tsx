@@ -1,57 +1,22 @@
 import cl from 'classnames';
+import { useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
 import Logo from '../../assets/svg/logo.svg';
 import Burger from '../../assets/svg/ri_menu-line.svg';
+import { useScrollDirection } from '../../hooks/useScrollDirection';
 import s from './Header.module.scss';
-
-function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = useState<'down' | 'up'>('up');
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    let scrollTimeout: NodeJS.Timeout;
-
-    const updateScrollDirection = () => {
-      const { scrollY } = window;
-      const direction = scrollY > lastScrollY ? 'down' : 'up';
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
-      ) {
-        setScrollDirection(direction);
-      }
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-
-      // Clear previous timeout
-      clearTimeout(scrollTimeout);
-
-      // Set a new timeout to reset direction to "up" after 2 seconds
-      scrollTimeout = setTimeout(() => {
-        setScrollDirection('up');
-      }, 2000);
-    };
-    window.addEventListener('scroll', updateScrollDirection); // add event listener
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
-    };
-  }, [scrollDirection]);
-
-  return scrollDirection;
-}
+import { Competitions } from './Competitions/Competitions';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement | null>(null);
-  const scrollDirection = useScrollDirection();
+  const { scrollDirection, currentScrollY } = useScrollDirection();
 
   return (
     <header
       ref={headerRef}
       className={cl(s.header, {
-        [s.headerWhite]: true,
+        [s.headerWhite]: currentScrollY > 1,
         [s.headerHidden]: scrollDirection === 'down',
-        [s.headerFixed]: scrollDirection === 'up',
       })}>
       <Link to="/" className={s.logo}>
         <img className={s.logo} src={Logo} alt="Logo" />
@@ -60,32 +25,39 @@ export const Header: React.FC = () => {
       <nav className={cl(s.nav, { [s.navProfile]: false })}>
         <ul className={cl(s.list)}>
           <li className={cl(s.listItem)}>
-            <NavLink to="/" className={({ isActive }) => (true ? s.linkActive : '')}>
+            <button
+              type="button"
+              onClick={() => console.log('click')}
+              className={cl({
+                [s.linkActive]: true,
+              })}>
               Компетенции
-            </NavLink>
+            </button>
           </li>
           <li className={cl(s.listItem)}>
-            <NavLink to="/some-route" className={({ isActive }) => (isActive ? s.linkActive : '')}>
+            <NavLink to="/some-route1" className={({ isActive }) => (isActive ? s.linkActive : '')}>
               Лаборатория
             </NavLink>
           </li>
           <li className={cl(s.listItem)}>
-            <NavLink to="/some-route" className={({ isActive }) => (isActive ? s.linkActive : '')}>
+            <NavLink to="/some-route2" className={({ isActive }) => (isActive ? s.linkActive : '')}>
               Продукты
             </NavLink>
           </li>
           <li className={cl(s.listItem)}>
-            <NavLink to="/some-route" className={({ isActive }) => (isActive ? s.linkActive : '')}>
+            <NavLink to="/some-route3" className={({ isActive }) => (isActive ? s.linkActive : '')}>
               Контакты
             </NavLink>
           </li>
           <li className={cl(s.listItem)}>
-            <NavLink to="/some-route" className={({ isActive }) => (isActive ? s.linkActive : '')}>
+            <NavLink to="/some-route4" className={({ isActive }) => (isActive ? s.linkActive : '')}>
               Личный кабинет
             </NavLink>
           </li>
         </ul>
       </nav>
+
+      <Competitions />
 
       <div className={s.burger}>
         <img className={s.burger} src={Burger} alt="Logo" />
