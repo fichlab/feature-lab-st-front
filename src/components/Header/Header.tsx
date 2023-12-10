@@ -11,9 +11,14 @@ export const Header: React.FC = () => {
   // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
   const [isCompetitionsVisible, setCompetitionsVisible] = useState(false);
+  const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
 
   const handleCompetitionsButtonClick = () => {
     setCompetitionsVisible(!isCompetitionsVisible);
+  };
+
+  const handleBurgerClick = () => {
+    setIsNavMobileOpen(!isNavMobileOpen);
   };
 
   return (
@@ -26,14 +31,17 @@ export const Header: React.FC = () => {
       <Link to="/" className={s.logo}>
         <img className={s.logo} src={Logo} alt="Logo" />
       </Link>
+      <nav className={cl(s.nav, { [s.navProfile]: false, [s.navMobileOpen]: isNavMobileOpen })}>
+        <button type="button" onClick={handleBurgerClick} className={cl(s.btnMobileMenuClose)} />
 
-      <nav className={cl(s.nav, { [s.navProfile]: false })}>
         <ul className={cl(s.list)}>
-          <li className={cl(s.listItem)} onMouseLeave={() => setCompetitionsVisible(false)}>
+          <li
+            className={cl(s.listItem, s.listItemSubMenu)}
+            onMouseLeave={() => setCompetitionsVisible(false)}>
             <button
               type="button"
               onClick={handleCompetitionsButtonClick}
-              className={cl(s.submenu__btn, {
+              className={cl(s.btnSubmenuOpen, {
                 [s.linkActive]: isCompetitionsVisible,
               })}>
               Компетенции
@@ -63,9 +71,9 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
 
-      <div className={s.burger}>
-        <img className={s.burger} src={Burger} alt="Logo" />
-      </div>
+      <button type="button" onClick={handleBurgerClick} className={s.burger}>
+        <img className={s.burger} src={Burger} alt="Open mobile menu" />
+      </button>
     </header>
   );
 };
