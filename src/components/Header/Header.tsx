@@ -1,19 +1,24 @@
 import cl from 'classnames';
-import { useRef } from 'react';
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/svg/logo.svg';
 import Burger from '../../assets/svg/ri_menu-line.svg';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
-import s from './Header.module.scss';
 import { Competitions } from './Competitions/Competitions';
+import s from './Header.module.scss';
 
 export const Header: React.FC = () => {
-  const headerRef = useRef<HTMLDivElement | null>(null);
+  // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
+  const [isCompetitionsVisible, setCompetitionsVisible] = useState(false);
+
+  const handleCompetitionsButtonClick = () => {
+    setCompetitionsVisible(!isCompetitionsVisible);
+  };
 
   return (
     <header
-      ref={headerRef}
+      // ref={headerRef}
       className={cl(s.header, {
         [s.headerWhite]: currentScrollY > 1,
         [s.headerHidden]: scrollDirection === 'down',
@@ -24,15 +29,16 @@ export const Header: React.FC = () => {
 
       <nav className={cl(s.nav, { [s.navProfile]: false })}>
         <ul className={cl(s.list)}>
-          <li className={cl(s.listItem)}>
+          <li className={cl(s.listItem)} onMouseLeave={() => setCompetitionsVisible(false)}>
             <button
               type="button"
-              onClick={() => console.log('click')}
-              className={cl({
-                [s.linkActive]: true,
+              onClick={handleCompetitionsButtonClick}
+              className={cl(s.submenu__btn, {
+                [s.linkActive]: isCompetitionsVisible,
               })}>
               Компетенции
             </button>
+            <Competitions isVisible={isCompetitionsVisible} />
           </li>
           <li className={cl(s.listItem)}>
             <NavLink to="/some-route1" className={({ isActive }) => (isActive ? s.linkActive : '')}>
@@ -56,8 +62,6 @@ export const Header: React.FC = () => {
           </li>
         </ul>
       </nav>
-
-      <Competitions />
 
       <div className={s.burger}>
         <img className={s.burger} src={Burger} alt="Logo" />
