@@ -7,10 +7,10 @@ import Main from '../Main/Main';
 import { PopupContact } from '../PopupContact/PopupContact';
 
 const App: React.FC = () => {
-  const [isPopupOpen, setPopupIsOpen] = React.useState(true);
+  const [isPopupContactOpen, setPopupContactIsOpen] = React.useState(true);
 
-  const closeAllPopups = () => {
-    setPopupIsOpen(false);
+  const closePopupContactPopups = () => {
+    setPopupContactIsOpen(false);
   };
 
   return (
@@ -20,7 +20,11 @@ const App: React.FC = () => {
         <Routes>{/* <Route path="/" element={} /> */}</Routes>
       </Main>
 
-      <PopupContact isOpen={isPopupOpen} onClose={closeAllPopups} header="hello" />
+      <PopupContact
+        isOpen={isPopupContactOpen}
+        onClose={closePopupContactPopups}
+        header="Свяжитесь с нами"
+      />
       <Footer />
     </div>
   );

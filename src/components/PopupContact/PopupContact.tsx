@@ -12,6 +12,7 @@ export const PopupContact: React.FC<IPopupProps> = ({ header = '', onClose, isOp
   return isOpen ? (
     <Overlay onClose={onClose} isOpen={isOpen}>
       <h2 className={s.popupTitle}>{header}</h2>
+      <button className={s.closeButton} type="button" aria-label="Close popup" onClick={onClose} />
     </Overlay>
   ) : (
     <div />

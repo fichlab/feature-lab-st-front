@@ -1,3 +1,18 @@
 .popupTitle {
-  font-family: --title-h-3-font-family;
+  margin: 100px auto 80px;
+  color: var(--darkblue, #002d63);
+  font-family: var(--title-h-1-molot-font-family, "Molot-Regular", sans-serif);
+  font-size: var(--title-h-1-molot-font-size, 128px);
+  line-height: var(--title-h-1-molot-line-height, 128px);
+  font-weight: var(--title-h-1-molot-font-weight, 400);
+}
+
+.closeButton {
+  background-image: url(./close_button/close-btn.svg);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 2;
 }

@@ -28,12 +28,6 @@ const Overlay: React.FC<IOverlayProps> = ({ onClose, isOpen, children }) => {
   return ReactDOM.createPortal(
     <div className={cl(s.overlay, { [s.overlayOpen]: isOpen })}>
       <div className={s.overlayContainer}>
-        {/* <button
-          className={s.overlayCloseButton}
-          type="button"
-          aria-label="Mute volume"
-          onClick={onClose}
-        /> */}
         {/* {withBtnClose && (
           <Button
             mode="LinkBtn"

@@ -7,7 +7,6 @@
   left: 0;
 
   box-sizing: border-box;
-  align-items: center;
 
   background-color: var(--shadow);
   visibility: hidden;
@@ -26,7 +25,8 @@
     display: flex;
     flex-direction: column;
 
-    width: 1720px;
+    max-width: 1720px;
+    width: 100%;
     min-height: 1146px;
 
     background-color: var(--white);
