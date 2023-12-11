@@ -5,7 +5,7 @@ import Logo from '../../assets/svg/logo.svg';
 import Burger from '../../assets/svg/ri_menu-line.svg';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import s from './Header.module.scss';
-import { Competitions } from './Competitions/Competitions';
+// import { Competitions } from './Competitions/Competitions';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
 
-      <Competitions />
+      {/* <Competitions /> */}
 
       <div className={s.burger}>
         <img className={s.burger} src={Burger} alt="Logo" />
