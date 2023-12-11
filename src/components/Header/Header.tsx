@@ -10,7 +10,7 @@ import s from './Header.module.scss';
 export const Header: React.FC = () => {
   // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
-  const [isCompetitionsVisible, setCompetitionsVisible] = useState(true);
+  const [isCompetitionsVisible, setCompetitionsVisible] = useState(false);
   const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
 
   const handleCompetitionsButtonClick = () => {

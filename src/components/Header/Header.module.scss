@@ -130,13 +130,13 @@
 }
 
 @media screen and (width <= 1430px) {
-  .header__content {
+  .content {
     padding: 8px 50px;
   }
 }
 
 @media screen and (width <= 1280px) {
-  .header__content {
+  .content {
     padding: 8px 50px;
   }
 
@@ -156,7 +156,7 @@
 }
 
 @media screen and (width <= 1060px) {
-  .header__content {
+  .content {
     column-gap: 20px;
     padding: 8px 30px;
   }
@@ -168,7 +168,7 @@
 }
 
 @media screen and (width <= 768px) {
-  .header__content {
+  .content {
     justify-content: space-between;
     padding: 8px 32px;
   }
