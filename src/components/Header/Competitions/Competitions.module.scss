@@ -6,7 +6,7 @@
 .competitions {
   position: absolute;
   top: -20px;
-  left: 80px;
+  left: 0;
 
   visibility: hidden;
   opacity: 0;
@@ -27,7 +27,7 @@
   justify-content: flex-start;
 
   width: 288px;
-  margin: 62px 10px 20px;
+  margin: 62px 10px 20px 90px;
   padding: 20px 20px 28px;
 
   background: var(--white, #fff);
