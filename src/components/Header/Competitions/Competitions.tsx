@@ -1,4 +1,3 @@
-/* Code generated with AutoHTML Plugin for Figma */
 import { NavLink } from 'react-router-dom';
 import cl from 'classnames';
 import s from './Competitions.module.scss';
