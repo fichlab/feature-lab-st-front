@@ -1,0 +1,85 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+
+  &Fieldset {
+    width: 1720px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &Button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  .contact {
+    border-style: solid;
+    border-color: var(--darkblue, #002d63);
+    border-width: 2px 0px 2px 0px;
+    padding: 8px 160px 22px 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .headline {
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .textNumber {
+    color: var(--white, #ffffff);
+    text-align: left;
+    font-family: var(--title-h-3-molot-font-family, 'Molot-Regular', sans-serif);
+    font-size: var(--title-h-3-molot-font-size, 80px);
+    line-height: var(--title-h-3-molot-line-height, 80px);
+    font-weight: var(--title-h-3-molot-font-weight, 400);
+    font-style: normal;
+    position: relative;
+    width: 200px;
+    -webkit-text-stroke: 3.5px var(--darkblue);
+  }
+
+  .input {
+    margin: 0;
+    padding: 0;
+    width: 1180px;
+    height: 80px;
+    border: none;
+    gap: 10px;
+    font-family: var(--title-h-2-font-family, 'Germano-Regular', sans-serif);
+    font-size: var(--title-h-2-font-size, 80px);
+    line-height: var(--title-h-2-line-height, 80px);
+    font-weight: var(--title-h-2-font-weight, 400);
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex: 1;
+    outline: none;
+  }
+  .input::placeholder {
+    color: var(--darkblue-50, #8096b1);
+    text-align: left;
+    letter-spacing: -3.2px;
+    flex: 1;
+  }
+}

@@ -23,7 +23,7 @@ const App: React.FC = () => {
       <PopupContact
         isOpen={isPopupContactOpen}
         onClose={closePopupContactPopups}
-        header="Свяжитесь с нами"
+        title="Свяжитесь с нами"
       />
       <Footer />
     </div>
