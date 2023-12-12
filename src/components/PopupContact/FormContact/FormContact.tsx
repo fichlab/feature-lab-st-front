@@ -18,7 +18,7 @@ export const FormContact: React.FC<IFormProps> = ({
     <form className={s.form} method="POST" onSubmit={onSubmit}>
       <fieldset className={s.formFieldset}>
         <div className={s.contact}>
-          <div className={s.headline}>
+          <div className={s.inputContainer}>
             <span className={s.textNumber}>01</span>
             <input
               className={s.input}
@@ -35,7 +35,7 @@ export const FormContact: React.FC<IFormProps> = ({
           </div>
         </div>
         <div className={s.contact}>
-          <div className={s.headline}>
+          <div className={s.inputContainer}>
             <span className={s.textNumber}>02</span>
             <input
               className={s.input}
@@ -52,7 +52,7 @@ export const FormContact: React.FC<IFormProps> = ({
           </div>
         </div>
         <div className={s.contact}>
-          <div className={s.headline}>
+          <div className={s.inputContainer}>
             <span className={s.textNumber}>03</span>
             <input
               className={s.input}
