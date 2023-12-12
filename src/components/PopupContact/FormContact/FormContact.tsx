@@ -1,3 +1,4 @@
+import cl from 'classnames';
 import React from 'react';
 import s from './FormContact.module.scss';
 
@@ -6,6 +7,7 @@ type IFormProps = {
   // buttonText: string;
   // value: string;
   // handleChange: () => void;
+  // error: string;
 };
 
 export const FormContact: React.FC<IFormProps> = ({
@@ -13,6 +15,7 @@ export const FormContact: React.FC<IFormProps> = ({
   buttonText,
   value,
   handleChange,
+  error,
 }) => {
   return (
     <form className={s.form} method="POST" onSubmit={onSubmit}>
@@ -33,6 +36,7 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />
           </div>
+          <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
         </div>
         <div className={s.contact}>
           <div className={s.inputContainer}>
@@ -50,6 +54,7 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />
           </div>
+          <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
         </div>
         <div className={s.contact}>
           <div className={s.inputContainer}>
@@ -67,6 +72,7 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />
           </div>
+          <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
         </div>
       </fieldset>
       <button className={s.formButton} type="submit">
