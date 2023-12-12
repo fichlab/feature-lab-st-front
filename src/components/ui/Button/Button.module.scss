@@ -184,11 +184,9 @@
 
     .promoText {
       width: 260px;
-
       font-family: var(--title-h-4-font-family, 'Germano-Regular', sans-serif);
-      font-size: var(--title-h-4-font-size, 48px);
-      font-weight: var(--title-h-4-font-weight, 400);
-      line-height: var(--title-h-4-line-height, 48px);
+      font-size: var(--title-h-3-font-size, 64px);
+      line-height: var(--title-h-3-line-height, 64px);
     }
   }
 
@@ -198,7 +196,6 @@
 
     .text {
       font-size: var(--title-h-4-font-size, 48px);
-      font-weight: var(--title-h-4-font-weight, 400);
       line-height: var(--title-h-4-line-height, 48px);
     }
   }
@@ -206,6 +203,10 @@
 
 @media screen and (width <= 768px) {
   .promo {
+    .promoText {
+      font-size: var(--title-h-4-font-size, 48px);
+      line-height: var(--title-h-4-line-height, 48px);
+    }
   }
 
   .radiant {
@@ -220,7 +221,6 @@
     .promoText {
       width: 180px;
       font-size: var(--title-tel-h-1-font-size, 40px);
-      font-weight: var(--title-tel-h-1-font-weight, 400);
       line-height: var(--title-tel-h-1-line-height, 40px);
     }
   }
@@ -231,7 +231,6 @@
 
     .text {
       font-size: var(--title-tel-h-1-font-size, 40px);
-      font-weight: var(--title-tel-h-1-font-weight, 400);
       line-height: var(--title-tel-h-1-line-height, 40px);
     }
   }
