@@ -7,7 +7,7 @@ export interface ICompetitionsProps {
   isVisible: boolean;
 }
 
-export const Competitions = ({ className, isVisible }: ICompetitionsProps): JSX.Element => {
+export const Competitions = ({ className = '', isVisible }: ICompetitionsProps): JSX.Element => {
   return (
     <div
       className={cl(
