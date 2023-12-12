@@ -1,6 +1,7 @@
 import cl from 'classnames';
 import React from 'react';
 import s from './FormContact.module.scss';
+import { Button } from '../../ui/Button/Button';
 
 type IFormProps = {
   // onSubmit: () => void;
@@ -93,9 +94,7 @@ export const FormContact: React.FC<IFormProps> = ({
           <span className={s.checkboxTextConfidential}>политикой конфиденциальности</span>
         </span>
       </label>
-      {/* <button className={s.formButton} type="submit">
-        {buttonText || 'text'}
-      </button> */}
+      <Button className={s.formButton} theme="white" />
     </form>
   );
 };
