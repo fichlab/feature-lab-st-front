@@ -8,6 +8,8 @@ type IFormProps = {
   // value: string;
   // handleChange: () => void;
   // error: string;
+  // isChecked: boolean;
+  // onChange: () => void;
 };
 
 export const FormContact: React.FC<IFormProps> = ({
@@ -16,6 +18,8 @@ export const FormContact: React.FC<IFormProps> = ({
   value,
   handleChange,
   error,
+  isChecked,
+  onChange,
 }) => {
   return (
     <form className={s.form} method="POST" onSubmit={onSubmit}>
@@ -75,9 +79,23 @@ export const FormContact: React.FC<IFormProps> = ({
           <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
         </div>
       </fieldset>
-      <button className={s.formButton} type="submit">
+      <label className={s.checkboxContainer} htmlFor="checkboxConfidential">
+        <input
+          className={s.checkbox}
+          id="checkboxConfidential"
+          aria-label="Checkbox confidential"
+          name="checkboxConfidential"
+          type="checkbox"
+          checked={isChecked}
+        />
+        <span className={s.checkboxText}>
+          Соглашаюсь с обработкой персональных данных <br />и{' '}
+          <span className={s.checkboxTextConfidential}>политикой конфиденциальности</span>
+        </span>
+      </label>
+      {/* <button className={s.formButton} type="submit">
         {buttonText || 'text'}
-      </button>
+      </button> */}
     </form>
   );
 };
