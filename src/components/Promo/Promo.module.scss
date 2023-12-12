@@ -180,10 +180,10 @@
 }
 
 @media screen and (width <= 760px) {
-  .bg_blue {
-  }
-
   .divider {
+    width: 90vw;
+    margin: -8px 0 24px; // under title
+    border-width: 3px 0 0;
   }
 
   .title {
