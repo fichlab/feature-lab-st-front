@@ -24,7 +24,7 @@ export const FormContact: React.FC<IFormProps> = ({
 }) => {
   return (
     <form className={s.form} method="POST" onSubmit={onSubmit}>
-      <fieldset className={s.formFieldset}>
+      <fieldset className={s.fieldset}>
         <div className={s.contact}>
           <div className={s.inputContainer}>
             <span className={s.textNumber}>01</span>
@@ -94,7 +94,7 @@ export const FormContact: React.FC<IFormProps> = ({
           <span className={s.checkboxTextConfidential}>политикой конфиденциальности</span>
         </span>
       </label>
-      <Button className={s.formButton} theme="white" />
+      <Button className={s.button} theme="white" />
     </form>
   );
 };
