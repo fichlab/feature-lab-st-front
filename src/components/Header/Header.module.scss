@@ -79,6 +79,14 @@
 
 .btn {
   &SubmenuOpen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    text-decoration: underline;
+
     &:hover {
       background: var(
         --radialblue-45,
@@ -86,30 +94,10 @@
       );
     }
   }
+}
 
-  &MobileMenuClose {
-    position: absolute;
-    z-index: 1;
-    top: 12px;
-    right: 12px;
-
-    display: none;
-
-    width: 24px;
-    height: 24px;
-
-    background-image: url('./cross_icon/cross_default.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    &:focus {
-      background-image: url('./cross_icon/cross_focus.svg');
-    }
-
-    &:active {
-      background-image: url('./cross_icon/cross_press.svg');
-    }
-  }
+.arrow {
+  display: none;
 }
 
 .link {
@@ -179,6 +167,15 @@
     }
   }
 
+  .arrow {
+    display: block;
+    transition: transform 0.3s ease;
+
+    &_rotate {
+      transform: rotate(180deg);
+    }
+  }
+
   .logo {
     width: 39px;
     height: auto;
@@ -186,8 +183,8 @@
 
   .nav {
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 10%;
+    right: 2%;
 
     padding: 0;
 
@@ -214,7 +211,7 @@
     justify-content: flex-start;
 
     min-width: 250px;
-    padding: 20px 20px 28px;
+    padding: 53px 20px 28px;
 
     background: var(--white, #fff);
     box-shadow: var(--shadow-box-shadow, 0 10px 20px 0 rgb(0 45 99 / 30%));

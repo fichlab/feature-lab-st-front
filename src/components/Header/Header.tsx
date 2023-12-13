@@ -2,16 +2,17 @@ import cl from 'classnames';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/svg/logo.svg';
-import Burger from '../../assets/svg/ri_menu-line.svg';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { Competitions } from './Competitions/Competitions';
+import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
+import Arrow from './svg/Icon-arrow.svg?svgr';
 
 export const Header: React.FC = () => {
   // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
-  const [isCompetitionsVisible, setCompetitionsVisible] = useState(false);
-  const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
+  const [isCompetitionsVisible, setCompetitionsVisible] = useState(true);
+  const [isNavMobileOpen, setIsNavMobileOpen] = useState(true);
 
   const handleCompetitionsButtonClick = () => {
     setCompetitionsVisible(!isCompetitionsVisible);
@@ -25,7 +26,7 @@ export const Header: React.FC = () => {
     <header
       // ref={headerRef}
       className={cl(s.header, {
-        [s.header_hidden]: scrollDirection === 'down',
+        [s.header_hidden]: !isNavMobileOpen && scrollDirection === 'down',
       })}>
       <div
         className={cl(s.content, {
@@ -35,8 +36,6 @@ export const Header: React.FC = () => {
           <img className={s.logo} src={Logo} alt="Logo" />
         </Link>
         <nav className={cl(s.nav, { [s.navProfile]: false, [s.navMobileOpen]: isNavMobileOpen })}>
-          <button type="button" onClick={handleBurgerClick} className={cl(s.btnMobileMenuClose)} />
-
           <ul className={cl(s.list)}>
             <li
               className={cl(s.listItem, s.listItemSubMenu)}
@@ -48,6 +47,11 @@ export const Header: React.FC = () => {
                   [s.linkActive]: isCompetitionsVisible,
                 })}>
                 Компетенции
+                <Arrow
+                  className={cl(s.arrow, {
+                    [s.arrow_rotate]: isCompetitionsVisible,
+                  })}
+                />
               </button>
               <Competitions isVisible={isCompetitionsVisible} />
             </li>
@@ -82,9 +86,7 @@ export const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <button type="button" onClick={handleBurgerClick} className={s.burger}>
-          <img className={s.burger} src={Burger} alt="Open mobile menu" />
-        </button>
+        <HamburgerBtn onClick={handleBurgerClick} />
       </div>
     </header>
   );

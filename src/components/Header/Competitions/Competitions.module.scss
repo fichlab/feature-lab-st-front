@@ -61,6 +61,8 @@
 @media screen and (width <= 768px) {
   .competitions {
     position: static;
+    top: 0;
+    left: 0;
 
     overflow: hidden;
 
@@ -79,6 +81,13 @@
   }
 
   .competitions__list {
+    align-items: flex-end;
+
     margin: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    border: none;
+    box-shadow: none;
   }
 }
