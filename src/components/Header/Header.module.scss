@@ -108,15 +108,6 @@
   }
 }
 
-.burger {
-  display: none;
-
-  width: 40px;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-}
-
 @media screen and (width <= 1430px) {
   .content {
     padding: 8px 50px;
@@ -159,12 +150,6 @@
   .content {
     justify-content: space-between;
     padding: 8px 32px;
-  }
-
-  .btn {
-    &MobileMenuClose {
-      display: block;
-    }
   }
 
   .arrow {
@@ -226,10 +211,6 @@
       flex-direction: column;
       align-items: start;
     }
-  }
-
-  .burger {
-    display: block;
   }
 }
 

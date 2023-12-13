@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import cl from 'classnames';
+import { FC } from 'react';
+import { NavLink } from 'react-router-dom';
 import s from './Competitions.module.scss';
 
 export interface ICompetitionsProps {
@@ -7,7 +8,7 @@ export interface ICompetitionsProps {
   isVisible: boolean;
 }
 
-export const Competitions = ({ className = '', isVisible }: ICompetitionsProps): JSX.Element => {
+export const Competitions: FC<ICompetitionsProps> = ({ className = '', isVisible }) => {
   return (
     <div
       className={cl(

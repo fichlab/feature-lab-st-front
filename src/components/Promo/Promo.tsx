@@ -1,4 +1,5 @@
 import cl from 'classnames';
+import { FC } from 'react';
 import { Button } from '../ui/Button/Button';
 import s from './Promo.module.scss';
 
@@ -6,7 +7,7 @@ export interface IPromoProps {
   className?: string;
 }
 
-export const Promo = ({ className = '' }: IPromoProps): JSX.Element => {
+export const Promo: FC<IPromoProps> = ({ className = '' }) => {
   return (
     <section aria-label="Promo" className={cl(s.promo, className)}>
       <div className={s.bg_blue} />
