@@ -1,4 +1,5 @@
 import cl from 'classnames';
+import { FC } from 'react';
 import s from './Button.module.scss';
 import Spinner from './svg/Icon-SpinnerGap.svg?svgr';
 
@@ -8,19 +9,25 @@ export interface IButtonProps {
   theme: 'promo' | 'white' | 'blue';
   text?: string;
   isLoading?: boolean;
+  disabled?: boolean;
 }
 
-export const Button = ({
+export const Button: FC<IButtonProps> = ({
   className = '',
   onClick = () => {},
   theme,
   text = '',
   isLoading = false,
-}: IButtonProps): JSX.Element => {
+  disabled = false,
+}) => {
   return (
     <>
       {theme === 'promo' && (
-        <button onClick={onClick} type="button" className={cl(s.btn, s.promo, className)}>
+        <button
+          disabled={disabled}
+          onClick={onClick}
+          type="button"
+          className={cl(s.btn, s.promo, className)}>
           <div className={s.disk_out}>
             <div className={s.disk_in}>
               {!isLoading ? (
@@ -34,8 +41,12 @@ export const Button = ({
       )}
       {(theme === 'white' || theme === 'blue') && (
         <div className={cl(s.btn, s.radiant, className)}>
-          <div className={s.gradient}>
+          <div
+            className={cl(s.gradient, {
+              [s.gradient_gray]: disabled === true,
+            })}>
             <button
+              disabled={disabled}
               onClick={onClick}
               type="button"
               className={cl(s.disk, {
