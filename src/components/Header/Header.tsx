@@ -11,8 +11,8 @@ import Arrow from './svg/Icon-arrow.svg?svgr';
 export const Header: React.FC = () => {
   // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
-  const [isCompetitionsVisible, setCompetitionsVisible] = useState(true);
-  const [isNavMobileOpen, setIsNavMobileOpen] = useState(true);
+  const [isCompetitionsVisible, setCompetitionsVisible] = useState(false);
+  const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
 
   const handleCompetitionsButtonClick = () => {
     setCompetitionsVisible(!isCompetitionsVisible);
