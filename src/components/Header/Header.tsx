@@ -11,14 +11,14 @@ import Arrow from './svg/Icon-arrow.svg?svgr';
 export const Header: React.FC = () => {
   // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
-  const [isCompetitionsVisible, setCompetitionsVisible] = useState(false);
+  const [isCompetenciesMenuVisible, setCompetenciesMenuVisible] = useState(false);
   const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
 
-  const handleCompetitionsButtonClick = () => {
-    setCompetitionsVisible(!isCompetitionsVisible);
+  const handleCompetenciesMenuBtnClick = () => {
+    setCompetenciesMenuVisible(!isCompetenciesMenuVisible);
   };
 
-  const handleBurgerClick = () => {
+  const handleBurgerBtnClick = () => {
     setIsNavMobileOpen(!isNavMobileOpen);
   };
 
@@ -39,21 +39,21 @@ export const Header: React.FC = () => {
           <ul className={cl(s.list)}>
             <li
               className={cl(s.listItem, s.listItemSubMenu)}
-              onMouseLeave={() => setCompetitionsVisible(false)}>
+              onMouseLeave={() => setCompetenciesMenuVisible(false)}>
               <button
                 type="button"
-                onClick={handleCompetitionsButtonClick}
+                onClick={handleCompetenciesMenuBtnClick}
                 className={cl(s.btnSubmenuOpen, {
-                  [s.linkActive]: isCompetitionsVisible,
+                  [s.linkActive]: isCompetenciesMenuVisible,
                 })}>
                 Компетенции
                 <Arrow
                   className={cl(s.arrow, {
-                    [s.arrow_rotate]: isCompetitionsVisible,
+                    [s.arrow_rotate]: isCompetenciesMenuVisible,
                   })}
                 />
               </button>
-              <CompetenciesMenu isVisible={isCompetitionsVisible} />
+              <CompetenciesMenu isVisible={isCompetenciesMenuVisible} />
             </li>
             <li className={cl(s.listItem)}>
               <NavLink
@@ -86,7 +86,7 @@ export const Header: React.FC = () => {
           </ul>
         </nav>
 
-        <HamburgerBtn onClick={handleBurgerClick} />
+        <HamburgerBtn onClick={handleBurgerBtnClick} />
       </div>
     </header>
   );
