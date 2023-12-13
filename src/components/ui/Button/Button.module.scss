@@ -123,6 +123,7 @@
       box-shadow: 0 10px 20px 0 rgb(0 45 99 / 30%);
 
       &:disabled {
+        cursor: default;
         box-shadow: none;
       }
     }
@@ -208,9 +209,8 @@
 
     .promoText {
       width: 260px;
-      font-family: var(--title-h-4-font-family, 'Germano-Regular', sans-serif);
-      font-size: var(--title-h-3-font-size, 64px);
-      line-height: var(--title-h-3-line-height, 64px);
+      font-size: var(--title-h-4-font-size, 48px);
+      line-height: var(--title-h-4-line-height, 48px);
     }
   }
 
