@@ -7,7 +7,7 @@ import { emailRegEx, nameRegEx } from '../../../constants/constants';
 type IFormProps = {
   onSubmit: () => void;
   // buttonText: string;
-  // value: string;
+  values: {};
   handleChange: () => void;
   errors: {};
   // isChecked: boolean;
@@ -18,7 +18,7 @@ type IFormProps = {
 export const FormContact: React.FC<IFormProps> = ({
   onSubmit,
   buttonText,
-  value,
+  values,
   handleChange,
   errors,
   isChecked,
@@ -34,7 +34,7 @@ export const FormContact: React.FC<IFormProps> = ({
             <input
               className={s.input}
               aria-label="Input name"
-              value={value}
+              // value={values.name}
               onChange={handleChange}
               name="name"
               type="text"
@@ -53,7 +53,7 @@ export const FormContact: React.FC<IFormProps> = ({
             <input
               className={s.input}
               aria-label="Input email"
-              value={value}
+              // value={values.email}
               onChange={handleChange}
               name="email"
               type="email"
@@ -72,7 +72,7 @@ export const FormContact: React.FC<IFormProps> = ({
             <input
               className={s.input}
               aria-label="Input project"
-              value={value}
+              // value={values.project}
               onChange={handleChange}
               name="project"
               type="text"

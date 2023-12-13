@@ -57,19 +57,17 @@
   gap: 20px;
   position: relative;
 }
+
 .input {
   margin: 0;
   padding: 0;
   width: 1180px;
   height: 80px;
   border: none;
-  gap: 10px;
   font-family: var(--title-h-2-font-family, 'Germano-Regular', sans-serif);
   font-size: var(--title-h-2-font-size, 80px);
   line-height: var(--title-h-2-line-height, 80px);
   font-weight: var(--title-h-2-font-weight, 400);
-  align-items: flex-end;
-  justify-content: flex-start;
   flex: 1;
   outline: none;
   background-color: transparent;
@@ -107,6 +105,7 @@
   cursor: pointer;
   z-index: 3;
 }
+
 .checkbox {
   position: absolute;
   z-index: -1;

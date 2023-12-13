@@ -36,6 +36,7 @@ export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpe
         onSubmit={() => handleSubmit}
         errors={errors}
         isValid={isValid}
+        values={values}
       />
     </Overlay>
   ) : (
