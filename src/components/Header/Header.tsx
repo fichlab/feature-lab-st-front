@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/svg/logo.svg';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
-import { Competitions } from './Competitions/Competitions';
+import { CompetenciesMenu } from './CompetenciesMenu/CompetenciesMenu';
 import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
 import Arrow from './svg/Icon-arrow.svg?svgr';
@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
                   })}
                 />
               </button>
-              <Competitions isVisible={isCompetitionsVisible} />
+              <CompetenciesMenu isVisible={isCompetitionsVisible} />
             </li>
             <li className={cl(s.listItem)}>
               <NavLink
