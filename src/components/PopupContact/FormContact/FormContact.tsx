@@ -2,15 +2,17 @@ import cl from 'classnames';
 import React from 'react';
 import s from './FormContact.module.scss';
 import { Button } from '../../ui/Button/Button';
+import { emailRegEx, nameRegEx } from '../../../constants/constants';
 
 type IFormProps = {
-  // onSubmit: () => void;
+  onSubmit: () => void;
   // buttonText: string;
   // value: string;
-  // handleChange: () => void;
-  // error: string;
+  handleChange: () => void;
+  errors: {};
   // isChecked: boolean;
   // onChange: () => void;
+  isValid: boolean | undefined;
 };
 
 export const FormContact: React.FC<IFormProps> = ({
@@ -18,9 +20,10 @@ export const FormContact: React.FC<IFormProps> = ({
   buttonText,
   value,
   handleChange,
-  error,
+  errors,
   isChecked,
   onChange,
+  isValid,
 }) => {
   return (
     <form className={s.form} method="POST" onSubmit={onSubmit}>
@@ -38,10 +41,11 @@ export const FormContact: React.FC<IFormProps> = ({
               placeholder="Имя"
               minLength={2}
               maxLength={60}
+              pattern={nameRegEx}
               required
             />
           </div>
-          <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
+          <span className={cl(s.inputError, { [s.inputErrorActive]: errors })}>ahah</span>
         </div>
         <div className={s.contact}>
           <div className={s.inputContainer}>
@@ -56,10 +60,11 @@ export const FormContact: React.FC<IFormProps> = ({
               placeholder="Email / телефон"
               minLength={6}
               maxLength={60}
+              pattern={emailRegEx}
               required
             />
           </div>
-          <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
+          <span className={cl(s.inputError, { [s.inputErrorActive]: errors })}>ahah</span>
         </div>
         <div className={s.contact}>
           <div className={s.inputContainer}>
@@ -77,7 +82,7 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />
           </div>
-          <span className={cl(s.inputError, { [s.inputErrorActive]: error })}>{error}</span>
+          <span className={cl(s.inputError, { [s.inputErrorActive]: errors })}>ahah</span>
         </div>
       </fieldset>
       <label className={s.checkboxContainer} htmlFor="checkboxConfidential">
