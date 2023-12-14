@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import cl from 'classnames';
 import s from './Stage.module.scss';
-import { EllipseIcon, IconProps } from '../icons';
+import { EllipseIcon, IconProps } from '../ui/icons';
 
 export const Stage: FC<IconProps> = ({ done = false, now = false, className = '' }) => {
   const stageState = done || now;
