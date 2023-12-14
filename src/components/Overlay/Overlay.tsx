@@ -27,28 +27,7 @@ const Overlay: React.FC<IOverlayProps> = ({ onClose, isOpen, children }) => {
   if (!popupRoot) return null;
   return ReactDOM.createPortal(
     <div className={cl(s.overlay, { [s.overlayOpen]: isOpen })}>
-      <div className={s.overlayContainer}>
-        {/* {withBtnClose && (
-          <Button
-            mode="LinkBtn"
-            size="small"
-            iconTitle="closeWindow"
-            onClick={onClose}
-            className={s.modalClose}
-          />
-        )} */}
-        {/* {header && (
-          <div className={s.modalHeader}>
-            <Text As="h3" size="head3">
-              {header}
-            </Text>
-            <button type="button">
-              <Icon iconTitle="iconEditDeck" />
-            </button>
-          </div>
-        )} */}
-        {children}
-      </div>
+      <div className={s.overlayContainer}>{children}</div>
     </div>,
     popupRoot,
   );
