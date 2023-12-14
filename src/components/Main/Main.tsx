@@ -11,6 +11,7 @@ const Main: FC<IProps> = ({ children = null }) => {
   return (
     <main className={styles.main}>
       {children}
+      <Promo />
       <Competencies />
       <Promo />
     </main>
