@@ -64,7 +64,6 @@
   width: 1180px;
   height: 80px;
   border: none;
-  resize: none;
   font-family: var(--title-h-2-font-family, 'Germano-Regular', sans-serif);
   font-size: var(--title-h-2-font-size, 80px);
   line-height: var(--title-h-2-line-height, 80px);
@@ -102,6 +101,11 @@
   position: relative;
   transition: all 0.2s ease;
   -webkit-text-stroke: 3.5px var(--darkblue);
+
+  &Error {
+    color: var(--error, #BF1700)!important;
+    -webkit-text-stroke: var(--error, #BF1700);
+  }
 }
 
 .textClue {
@@ -112,6 +116,10 @@
   font-weight: 300;
   line-height: 32px;
   display: none;
+
+  &Error {
+    color: var(--error, #BF1700);
+  }
 }
 
 .checkboxContainer {

@@ -65,8 +65,8 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />{' '}
             <div className={s.textContainer}>
-              <span className={s.textNumber}>01</span>
-              <span className={s.textClue}>Имя</span>
+              <span className={cl(s.textNumber, { [s.textNumberError]: errors.name })}>01</span>
+              <span className={cl(s.textClue, { [s.textClueError]: errors.name })}>Имя</span>
             </div>
           </div>
           <span className={cl(s.inputError, { [s.inputErrorActive]: errors.name })}>
@@ -89,8 +89,10 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />
             <div className={s.textContainer}>
-              <span className={s.textNumber}>02</span>
-              <span className={s.textClue}>Email/телефон</span>
+              <span className={cl(s.textNumber, { [s.textNumberError]: errors.email })}>02</span>
+              <span className={cl(s.textClue, { [s.textClueError]: errors.email })}>
+                Email/телефон
+              </span>
             </div>
           </div>
           <span className={cl(s.inputError, { [s.inputErrorActive]: errors.email })}>
@@ -112,8 +114,10 @@ export const FormContact: React.FC<IFormProps> = ({
               required
             />
             <div className={s.textContainer}>
-              <span className={s.textNumber}>03</span>
-              <span className={s.textClue}>О проекте</span>
+              <span className={cl(s.textNumber, { [s.textNumberError]: errors.project })}>03</span>
+              <span className={cl(s.textClue, { [s.textClueError]: errors.project })}>
+                О проекте
+              </span>
             </div>
           </div>
           <span className={cl(s.inputError, { [s.inputErrorActive]: errors.project })}>
