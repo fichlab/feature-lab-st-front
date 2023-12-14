@@ -30,7 +30,14 @@ module.exports = (env) => {
           exclude: /node_modules/,
         },
         {
+          test: /\.svg$/i,
+          issuer: /\.[jt]sx?$/,
+          resourceQuery: /svgr/, // include *.svg only with parameter *.svg?svgr
+          use: ['@svgr/webpack'],
+        },
+        {
           test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+          resourceQuery: { not: [/svgr/] }, // exclude react component if *.svg?svgr
           type: 'asset/resource',
         },
         {

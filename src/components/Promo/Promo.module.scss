@@ -1,0 +1,227 @@
+.promo,
+.promo * {
+  box-sizing: border-box;
+}
+
+.promo {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  min-height: 1160px;
+}
+
+.bg_blue {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: calc(100% - 225px);
+
+  background: var(
+    --gradient-bg,
+    linear-gradient(
+      0.23deg,
+      rgb(12 52 131 / 100%) 0%,
+      rgb(162 182 223 / 100%) 100%,
+      rgb(107 140 206 / 100%) 100%
+    )
+  );
+}
+
+.title {
+  margin: 47px 0 0;
+  margin-left: -14.4px; // letter-spacing: -14.4px not ideal
+
+  font-family: Molot-Regular, sans-serif;
+  font-size: 480px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -14.4px;
+
+  background-image: var(
+    --gradient,
+    linear-gradient(
+      0deg,
+      rgb(12 52 131 / 100%) 1%,
+      rgb(71 103 167 / 100%) 25%,
+      rgb(162 182 223 / 100%) 59%,
+      rgb(255 255 255 / 100%) 88%
+    )
+  );
+
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text; // Doesn't work with a stacking context(e.g. position: relative), see Chromium bug
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.divider {
+  width: 87vw;
+  max-width: 1720px;
+  height: 0;
+  margin: -43px 0 92px; // under title
+
+  border-color: var(--darkblue, #002d63);
+  border-style: solid;
+  border-width: 4px 0 0;
+}
+
+.headlines {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  align-self: flex-start;
+  justify-content: flex-start;
+
+  margin: 0 0 0 100px;
+}
+
+.headline {
+  font-family: var(--title-h-3-font-family, 'Germano-Regular', sans-serif);
+  font-size: var(--title-h-3-font-size, 64px);
+  font-weight: var(--title-h-3-font-weight, 400);
+  line-height: var(--title-h-3-line-height, 64px);
+  color: var(--white, #fff);
+  text-align: left;
+}
+
+.promo__btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (width < 1920px) {
+  .title {
+    font-size: 25vw;
+  }
+
+  .divider {
+    width: 88vw;
+    margin: -30px 0 92px; // under title
+  }
+}
+
+@media screen and (width <= 1280px) {
+  .promo {
+    min-height: 921px;
+    margin-bottom: 100px;
+  }
+
+  .divider {
+    width: 93vw;
+    max-width: 1180px;
+    margin: -20px 0 49px; // under title
+  }
+
+  .bg_blue {
+    height: calc(100% - 175px);
+  }
+
+  .title {
+    margin-left: -6.4px;
+    letter-spacing: -6.4px;
+  }
+
+  .headlines {
+    gap: 16px;
+    margin: 0 0 0 50px;
+  }
+
+  .headline {
+    font-size: var(--title-h-4-font-size, 48px);
+    font-weight: var(--title-h-4-font-weight, 400);
+    line-height: var(--title-h-4-line-height, 48px);
+  }
+}
+
+@media screen and (width <= 800px) {
+  .headlines {
+    max-width: 65%;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .promo {
+    min-height: 963px;
+    margin-bottom: 120px;
+  }
+
+  .bg_blue {
+    height: calc(100% - 157px);
+  }
+
+  .divider {
+    max-width: 704px;
+    margin: -13px 0 49px; // under title
+  }
+
+  .title {
+    margin-top: 60px;
+    margin-left: -3.76px;
+    font-size: 188px;
+    letter-spacing: -3.76px;
+  }
+
+  .headlines {
+    max-width: 70%;
+    margin: 0 0 0 30px;
+  }
+}
+
+@media screen and (width <= 760px) {
+  .divider {
+    width: 90vw;
+    margin: -8px 0 24px; // under title
+    border-width: 3px 0 0;
+  }
+
+  .title {
+    font-size: 25vw;
+  }
+}
+
+@media screen and (width <= 360px) {
+  .promo {
+    min-height: 760px;
+    margin-bottom: 120px;
+  }
+
+  .bg_blue {
+    height: calc(100% - 129px);
+  }
+
+  .title {
+    margin-left: 0;
+    font-size: 90px;
+    line-height: 88px;
+    letter-spacing: 0;
+  }
+
+  .divider {
+    max-width: 91vw;
+    margin: -4px 0 24px; // under title
+    border-width: 2px 0 0;
+  }
+
+  .headlines {
+    max-width: 90%;
+    margin: 0 0 0 15px;
+  }
+
+  .headline {
+    font-size: var(--title-tel-h-1-font-size, 40px);
+    font-weight: var(--title-tel-h-1-font-weight, 400);
+    line-height: var(--title-tel-h-1-line-height, 40px);
+  }
+}
