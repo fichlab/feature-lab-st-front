@@ -13,3 +13,4 @@ export { QuestionIcon } from './QuestionIcon/QuestionIcon';
 export { LinkIcon } from './socialsIcons/LinkIcon';
 export { TelegramIcon } from './socialsIcons/TelegramIcon';
 export { WhatsupIcon } from './socialsIcons/WhatsupIcon';
+export { CrossInCircleIcon } from './CrossInCircleIcon/CrossInCircleIcon';
