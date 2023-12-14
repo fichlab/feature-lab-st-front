@@ -1,17 +1,17 @@
 import cl from 'classnames';
-import React, { ChangeEvent, useRef } from 'react';
+import React, { ChangeEvent, FormEvent, useRef } from 'react';
 import s from './FormContact.module.scss';
 import { Button } from '../../ui/Button/Button';
 import { emailRegEx, nameRegEx } from '../../../constants/constants';
 
 type IFormProps = {
-  onSubmit: () => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
   // buttonText: string;
-  values: {};
+  values: { [key: string]: string };
   handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  errors: {};
+  errors: { [key: string]: string };
   // isChecked: boolean;
-  // onChange: () => void;
+  // onChange: () => void;S
   isValid: boolean | undefined;
 };
 
@@ -54,7 +54,7 @@ export const FormContact: React.FC<IFormProps> = ({
             <input
               className={s.input}
               aria-label="Input name"
-              // value={values.name}
+              value={values.name}
               onChange={onInputChange}
               name="name"
               type="text"
@@ -69,14 +69,16 @@ export const FormContact: React.FC<IFormProps> = ({
               <span className={s.textClue}>Имя</span>
             </div>
           </div>
-          <span className={cl(s.inputError, { [s.inputErrorActive]: false })} />
+          <span className={cl(s.inputError, { [s.inputErrorActive]: errors.name })}>
+            {errors.name}
+          </span>
         </div>
         <div className={s.contact}>
           <div className={s.inputContainer}>
             <input
               className={s.input}
               aria-label="Input email"
-              // value={values.email}
+              value={values.email}
               onChange={onInputChange}
               name="email"
               type="email"
@@ -91,14 +93,16 @@ export const FormContact: React.FC<IFormProps> = ({
               <span className={s.textClue}>Email/телефон</span>
             </div>
           </div>
-          <span className={cl(s.inputError, { [s.inputErrorActive]: false })} />
+          <span className={cl(s.inputError, { [s.inputErrorActive]: errors.email })}>
+            {errors.email}
+          </span>
         </div>
         <div className={s.contact}>
           <div className={s.inputContainer}>
             <textarea
               className={s.input}
               aria-label="Input project"
-              // value={values.project}
+              value={values.project}
               onChange={onTextareaChange}
               name="project"
               placeholder="О вашем проекте"
@@ -112,7 +116,9 @@ export const FormContact: React.FC<IFormProps> = ({
               <span className={s.textClue}>О проекте</span>
             </div>
           </div>
-          <span className={cl(s.inputError, { [s.inputErrorActive]: false })} />
+          <span className={cl(s.inputError, { [s.inputErrorActive]: errors.project })}>
+            {errors.project}
+          </span>
         </div>
       </fieldset>
       <label className={s.checkboxContainer} htmlFor="checkboxConfidential">

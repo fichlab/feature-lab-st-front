@@ -1,12 +1,12 @@
 import { useState, useCallback } from 'react';
 
-export function useFormAndValidation(inputValues: {}) {
+export function useFormAndValidation(inputValues: { [key: string]: string }) {
   const defaultValues = inputValues;
-  const [values, setValues] = useState(defaultValues);
-  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState<{ [key: string]: string }>(defaultValues);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isValid, setIsValid] = useState<boolean | undefined>(true);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (e) {
       const { name, value } = e.target;
       setValues({ ...values, [name]: value });
