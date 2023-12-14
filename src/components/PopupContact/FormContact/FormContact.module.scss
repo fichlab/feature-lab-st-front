@@ -26,7 +26,6 @@
   padding: 6px 160px 22px 160px;
   display: flex;
   flex-direction: column;
-  position: relative;
   z-index: 2;
 
   &:nth-of-type(2n) {
@@ -53,9 +52,10 @@
 .inputContainer {
   width: 1400px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   gap: 20px;
   position: relative;
+  align-items: center;
 }
 
 .input {
@@ -64,6 +64,7 @@
   width: 1180px;
   height: 80px;
   border: none;
+  resize: none;
   font-family: var(--title-h-2-font-family, 'Germano-Regular', sans-serif);
   font-size: var(--title-h-2-font-size, 80px);
   line-height: var(--title-h-2-line-height, 80px);
@@ -78,6 +79,16 @@
     letter-spacing: -3.2px;
     flex: 1;
   }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.textContainer {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .textNumber {
@@ -89,8 +100,18 @@
   font-weight: var(--title-h-3-molot-font-weight, 400);
   font-style: normal;
   position: relative;
-  width: 200px;
+  transition: all 0.2s ease;
   -webkit-text-stroke: 3.5px var(--darkblue);
+}
+
+.textClue {
+  color: var(--dark-blue, #002d63);
+  font-family: Germano;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+  display: none;
 }
 
 .checkboxContainer {
@@ -147,4 +168,20 @@
 
 .checkbox:checked + .checkboxText:before {
   background-image: url(./checkbox/checkboxChecked.svg);
+}
+
+.input:focus + .textContainer {
+  .textNumber {
+    color: var(--dark-blue, #002D63);
+  }
+
+  .textClue {
+    display: flex;
+  }
+}
+
+input:not(:placeholder-shown) + .textContainer {
+  .textNumber {
+    color: var(--dark-blue, #002D63);
+  }
 }
