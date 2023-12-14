@@ -1,0 +1,15 @@
+.spinnerIcon {
+  & > path {
+    stroke: var(--darkblue);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .spinnerIcon {
+    width: 64px;
+    height: 64px;
+  }
+}
