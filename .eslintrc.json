@@ -34,6 +34,7 @@
     "import/no-extraneous-dependencies": 0, // we know better where to install packages
     "css-modules/no-unused-class": [1, { "camelCase": true }],
     "css-modules/no-undef-class": [2, { "camelCase": true }],
+    "react/jsx-props-no-spreading": "off",
     "jsx-a11y/control-has-associated-label": [
       2,
       {
