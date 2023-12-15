@@ -13,6 +13,12 @@ const meta: Meta<typeof SpinnerIcon> = {
 export default meta;
 type Story = StoryObj<typeof SpinnerIcon>;
 
-export const Basic: Story = {
+export const DefaultTheme: Story = {
   args: {},
+};
+
+export const WhiteTheme: Story = {
+  args: {
+    theme: 'white',
+  },
 };

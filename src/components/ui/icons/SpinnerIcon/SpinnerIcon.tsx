@@ -4,12 +4,13 @@ import s from './SpinnerIcon.module.scss';
 
 interface SpinnerIconProps {
   className?: string;
+  theme?: 'white' | 'blue';
 }
 
-export const SpinnerIcon: FC<SpinnerIconProps> = ({ className = '' }) => {
+export const SpinnerIcon: FC<SpinnerIconProps> = ({ theme = 'blue', className = '' }) => {
   return (
     <svg
-      className={cl(s.spinnerIcon, className)}
+      className={cl(s.spinnerIcon, className, theme && s[`spinnerIcon__${theme}`])}
       xmlns="http://www.w3.org/2000/svg"
       width="128"
       height="128"

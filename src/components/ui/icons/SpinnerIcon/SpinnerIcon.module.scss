@@ -1,9 +1,16 @@
 .spinnerIcon {
   & > path {
-    stroke: var(--darkblue);
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 3;
+  }
+
+  &__blue {
+    stroke: var(--darkblue);
+  }
+
+  &__white {
+    stroke: var(--white);
   }
 }
 
