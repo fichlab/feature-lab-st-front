@@ -6,25 +6,21 @@ import { emailRegEx, nameRegEx } from '../../../constants/constants';
 
 type IFormProps = {
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
-  // buttonText: string;
   values: { [key: string]: string };
   handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   errors: { [key: string]: string };
-  // isChecked: boolean;
-  // onChange: () => void;S
   isValid: boolean | undefined;
 };
 
 export const FormContact: React.FC<IFormProps> = ({
   onSubmit,
-  buttonText,
   values,
   handleChange,
   errors,
-  isChecked,
-  onChange,
   isValid,
 }) => {
+  const [isChecked, setIsChecked] = React.useState<boolean>(false);
+
   const originalFontSize = useRef<string>();
   const originalTextareaHeight = useRef<string>();
 
@@ -35,6 +31,10 @@ export const FormContact: React.FC<IFormProps> = ({
       textLength > 20 ? `${80 - (textLength - 20)}px` : originalFontSize.current;
 
     handleChange(e);
+  };
+
+  const onCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(e.target.checked);
   };
 
   const onTextareaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -133,13 +133,20 @@ export const FormContact: React.FC<IFormProps> = ({
           name="checkboxConfidential"
           type="checkbox"
           checked={isChecked}
+          onChange={onCheckboxClick}
         />
         <span className={s.checkboxText}>
           Соглашаюсь с обработкой персональных данных <br />и{' '}
           <span className={s.checkboxTextConfidential}>политикой конфиденциальности</span>
         </span>
       </label>
-      <Button className={s.button} theme="white" />
+      <Button
+        className={s.button}
+        type="submit"
+        theme="white"
+        text="Отправить"
+        disabled={!isValid || !isChecked}
+      />
     </form>
   );
 };

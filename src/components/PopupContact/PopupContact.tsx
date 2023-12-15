@@ -11,7 +11,7 @@ type IPopupProps = {
 };
 
 export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpen }) => {
-  const { values, handleChange, errors, isValid } = useFormAndValidation({
+  const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation({
     name: '',
     email: '',
     project: '',
@@ -19,8 +19,11 @@ export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpe
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // if (!values.email || !values.password) {
-    // }
+    resetForm({
+      name: '',
+      email: '',
+      project: '',
+    });
   };
 
   return isOpen ? (
