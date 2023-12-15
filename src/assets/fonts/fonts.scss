@@ -3,8 +3,8 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('../assets/fonts/Germano-Regular.woff2') format('woff2'),
-    url('../assets/fonts/Germano-Regular.woff') format('woff');
+    url('./Germano-Regular.woff2') format('woff2'),
+    url('./Germano-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-style: normal;
   font-display: swap;
   src:
-    url('../assets/fonts/GOST_type_B.woff2') format('woff2'),
-    url('../assets/fonts/GOST_type_B.woff') format('woff');
+    url('./GOST_type_B.woff2') format('woff2'),
+    url('./GOST_type_B.woff') format('woff');
 }
 
 @font-face {
@@ -21,29 +21,27 @@
   font-style: normal;
   font-display: block;
   src:
-    url('../assets/fonts/Molot.woff2') format('woff2'),
-    url('../assets/fonts/Molot.woff') format('woff');
+    url('./Molot.woff2') format('woff2'),
+    url('./Molot.woff') format('woff');
 }
-
-// aliases for css exported from figma
 
 @font-face {
   font-family: Germano-Regular;
   src:
-    url('../assets/fonts/Germano-Regular.woff2') format('woff2'),
-    url('../assets/fonts/Germano-Regular.woff') format('woff');
+    url('./Germano-Regular.woff2') format('woff2'),
+    url('./Germano-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: GostTypeB-Standard;
   src:
-    url('../assets/fonts/GOST_type_B.woff2') format('woff2'),
-    url('../assets/fonts/GOST_type_B.woff') format('woff');
+    url('./GOST_type_B.woff2') format('woff2'),
+    url('./GOST_type_B.woff') format('woff');
 }
 
 @font-face {
   font-family: Molot-Regular;
   src:
-    url('../assets/fonts/Molot.woff2') format('woff2'),
-    url('../assets/fonts/Molot.woff') format('woff');
+    url('./Molot.woff2') format('woff2'),
+    url('./Molot.woff') format('woff');
 }
