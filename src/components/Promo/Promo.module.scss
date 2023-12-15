@@ -8,21 +8,20 @@
 
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   align-items: center;
 
   width: 100%;
   min-height: 1160px;
 }
 
-.promo__bg_blue {
+.bg_blue {
   position: absolute;
   z-index: -1;
   top: 0;
   left: 0;
 
   width: 100%;
-  min-height: 935px;
+  height: calc(100% - 225px);
 
   background: var(
     --gradient-bg,
@@ -35,14 +34,16 @@
   );
 }
 
-.promo__title {
+.title {
   margin: 47px 0 0;
+  margin-left: -14.4px; // letter-spacing: -14.4px not ideal
 
   font-family: Molot-Regular, sans-serif;
   font-size: 480px;
   font-weight: 400;
-  line-height: 480px;
+  line-height: 1;
   text-align: center;
+  letter-spacing: -14.4px;
 
   background-image: var(
     --gradient,
@@ -62,11 +63,11 @@
   -webkit-text-fill-color: transparent;
 }
 
-.promo__divider {
-  width: 100%;
+.divider {
+  width: 87vw;
   max-width: 1720px;
   height: 0;
-  margin: -40px 0 92px; // under title
+  margin: -43px 0 92px; // under title
 
   border-color: var(--darkblue, #002d63);
   border-style: solid;
@@ -93,66 +94,134 @@
   text-align: left;
 }
 
-.promo__button {
+.promo__btn {
   position: absolute;
   bottom: 0;
-  left: calc(50% - 225px);
-
-  width: 450px;
-  height: 450px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.promo__ellipse1 {
-  position: absolute;
-  inset: 0%;
+@media screen and (width < 1920px) {
+  .title {
+    font-size: 25vw;
+  }
 
-  width: 100%;
-  height: 100%;
-
-  background: var(--white, #fff);
-  border-radius: 50%;
+  .divider {
+    width: 88vw;
+    margin: -30px 0 92px; // under title
+  }
 }
 
-.promo__ellipse2 {
-  position: absolute;
-  inset: 5.56%;
+@media screen and (width <= 1280px) {
+  .promo {
+    min-height: 921px;
+    margin-bottom: 100px;
+  }
 
-  width: 88.89%;
-  height: 88.89%;
+  .divider {
+    width: 93vw;
+    max-width: 1180px;
+    margin: -20px 0 49px; // under title
+  }
 
-  background: linear-gradient(
-    0deg,
-    rgb(12 52 131 / 100%) 10%,
-    rgb(180 202 247 / 100%) 81%,
-    rgb(242 246 255 / 100%) 97%
-  );
-  border-radius: 50%;
+  .bg_blue {
+    height: calc(100% - 175px);
+  }
+
+  .title {
+    margin-left: -6.4px;
+    letter-spacing: -6.4px;
+  }
+
+  .headlines {
+    gap: 16px;
+    margin: 0 0 0 50px;
+  }
+
+  .headline {
+    font-size: var(--title-h-4-font-size, 48px);
+    font-weight: var(--title-h-4-font-weight, 400);
+    line-height: var(--title-h-4-line-height, 48px);
+  }
 }
 
-.promo__text {
-  position: absolute;
-  top: calc(50% - 70px);
-  left: calc(50% - 140px);
-
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-
-  width: 280px;
-  height: 140px;
+@media screen and (width <= 800px) {
+  .headlines {
+    max-width: 65%;
+  }
 }
 
-.promo__div2 {
-  position: relative;
+@media screen and (width <= 768px) {
+  .promo {
+    min-height: 963px;
+    margin-bottom: 120px;
+  }
 
-  flex: 1;
+  .bg_blue {
+    height: calc(100% - 157px);
+  }
 
-  font-family: var(--title-h-3-font-family, 'Germano-Regular', sans-serif);
-  font-size: var(--title-h-3-font-size, 64px);
-  font-weight: var(--title-h-3-font-weight, 400);
-  line-height: var(--title-h-3-line-height, 64px);
-  color: var(--white, #fff);
-  text-align: center;
+  .divider {
+    max-width: 704px;
+    margin: -13px 0 49px; // under title
+  }
+
+  .title {
+    margin-top: 60px;
+    margin-left: -3.76px;
+    font-size: 188px;
+    letter-spacing: -3.76px;
+  }
+
+  .headlines {
+    max-width: 70%;
+    margin: 0 0 0 30px;
+  }
+}
+
+@media screen and (width <= 760px) {
+  .divider {
+    width: 90vw;
+    margin: -8px 0 24px; // under title
+    border-width: 3px 0 0;
+  }
+
+  .title {
+    font-size: 25vw;
+  }
+}
+
+@media screen and (width <= 360px) {
+  .promo {
+    min-height: 760px;
+    margin-bottom: 120px;
+  }
+
+  .bg_blue {
+    height: calc(100% - 129px);
+  }
+
+  .title {
+    margin-left: 0;
+    font-size: 90px;
+    line-height: 88px;
+    letter-spacing: 0;
+  }
+
+  .divider {
+    max-width: 91vw;
+    margin: -4px 0 24px; // under title
+    border-width: 2px 0 0;
+  }
+
+  .headlines {
+    max-width: 90%;
+    margin: 0 0 0 15px;
+  }
+
+  .headline {
+    font-size: var(--title-tel-h-1-font-size, 40px);
+    font-weight: var(--title-tel-h-1-font-weight, 400);
+    line-height: var(--title-tel-h-1-line-height, 40px);
+  }
 }

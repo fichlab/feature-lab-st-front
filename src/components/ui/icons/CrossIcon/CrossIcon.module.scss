@@ -1,0 +1,11 @@
+.crossIcon {
+  cursor: pointer;
+
+  &:hover path {
+    stroke: var(--darkblue);
+  }
+
+  &:active {
+    transform: rotate(45deg);
+  }
+}

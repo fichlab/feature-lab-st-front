@@ -1,9 +1,9 @@
-.competitions,
-.competitions * {
+.competencies,
+.competencies * {
   box-sizing: border-box;
 }
 
-.competitions {
+.competencies {
   position: absolute;
   top: -20px;
   left: 0;
@@ -19,7 +19,7 @@
   }
 }
 
-.competitions__list {
+.competencies__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -38,7 +38,7 @@
   box-shadow: var(--shadow-box-shadow, 0 10px 20px 0 rgb(0 45 99 / 30%));
 }
 
-.competitions__item {
+.competencies__item {
   display: flex;
 
   &:hover {
@@ -49,7 +49,7 @@
   }
 }
 
-.competitions__link {
+.competencies__link {
   font-family: var(--text-2-font-family, 'GostTypeB-Standard', sans-serif);
   font-size: var(--text-2-font-size, 24px);
   font-weight: var(--text-2-font-weight, 400);
@@ -59,8 +59,10 @@
 }
 
 @media screen and (width <= 768px) {
-  .competitions {
+  .competencies {
     position: static;
+    top: 0;
+    left: 0;
 
     overflow: hidden;
 
@@ -78,7 +80,14 @@
     }
   }
 
-  .competitions__list {
+  .competencies__list {
+    align-items: flex-end;
+
     margin: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    border: none;
+    box-shadow: none;
   }
 }
