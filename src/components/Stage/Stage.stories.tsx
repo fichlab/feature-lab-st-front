@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Stage } from './Stage';
 
 const meta: Meta<typeof Stage> = {
-  title: 'ui/Stage',
+  title: 'components/Stage',
   component: Stage,
   parameters: {
     layout: 'centered',
