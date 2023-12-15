@@ -10,6 +10,7 @@ type IFormProps = {
   handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   errors: { [key: string]: string };
   isValid: boolean | undefined;
+  isLoading: boolean | undefined;
 };
 
 export const FormContact: React.FC<IFormProps> = ({
@@ -18,6 +19,7 @@ export const FormContact: React.FC<IFormProps> = ({
   handleChange,
   errors,
   isValid,
+  isLoading,
 }) => {
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
 
@@ -146,6 +148,7 @@ export const FormContact: React.FC<IFormProps> = ({
         theme="white"
         text="Отправить"
         disabled={!isValid || !isChecked}
+        isLoading={isLoading}
       />
     </form>
   );

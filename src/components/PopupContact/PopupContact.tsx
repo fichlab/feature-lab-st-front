@@ -11,6 +11,8 @@ type IPopupProps = {
 };
 
 export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpen }) => {
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+
   const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation({
     name: '',
     email: '',
@@ -19,6 +21,8 @@ export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpe
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
+
     resetForm({
       name: '',
       email: '',
@@ -36,6 +40,7 @@ export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpe
         errors={errors}
         isValid={isValid}
         values={values}
+        isLoading={isLoading}
       />
     </Overlay>
   ) : (
