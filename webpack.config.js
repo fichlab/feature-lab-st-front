@@ -9,13 +9,13 @@ module.exports = (env) => {
   return {
     entry: { main: './src/index.tsx' },
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'build'),
       filename: 'main.js',
       publicPath: '',
     },
     mode: 'development',
     devServer: {
-      static: path.resolve(__dirname, './dist'),
+      static: path.resolve(__dirname, './build'),
       compress: true,
       port: 8080,
 
