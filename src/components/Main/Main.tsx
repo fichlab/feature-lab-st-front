@@ -13,7 +13,6 @@ const Main: FC<IProps> = ({ children = null }) => {
       {children}
       <Promo />
       <Competencies />
-      <Promo />
     </main>
   );
 };
