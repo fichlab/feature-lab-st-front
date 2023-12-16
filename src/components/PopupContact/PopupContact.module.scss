@@ -54,6 +54,7 @@
 
 @media screen and (width <= 360px) {
   .popupTitle {
+    margin: 80px auto 48px;
     font-family: var(
       --title-tel-h-2-molot-font-family,
       "Molot-Regular",
@@ -64,6 +65,8 @@
   }
 
   .closeButton {
+    top: 16px;
+    right: 16px;
     background-image: url(./close_button/close-btn-360.svg);
     max-width: 32px;
     max-height: 32px;

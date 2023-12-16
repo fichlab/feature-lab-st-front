@@ -129,10 +129,10 @@
 .checkboxContainer {
   margin-top: 32px;
   margin-left: 452px;
-  width: 1100px;
+  max-width: calc(698px + (1028 - 698) * ((100vw - 1280px) / (1920 - 1280)));
+  width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 32px;
   align-items: center;
   position: relative;
   cursor: pointer;
@@ -175,7 +175,7 @@
 
 .checkboxTextConfidential {
   text-decoration-line: underline;
-  text-underline-offset: 7px;
+  text-underline-offset: 5px;
 }
 
 .checkbox:checked + .checkboxText:before {
@@ -203,6 +203,10 @@
     max-width: calc(704px + (1180 - 704) * ((100vw - 768px) / (1280 - 768)));
   }
 
+  .button {
+    margin-top: -110px;
+  }
+
   .contact {
     padding: 8px 80px 20px;
   }
@@ -222,14 +226,33 @@
     line-height: var(--title-tel-h-1-line-height, 40px);
   }
 
+  .textNumber {
+    -webkit-text-stroke: 3px var(--darkblue);
+
+    &Error {
+      color: var(--error, #bf1700) !important;
+      -webkit-text-stroke: var(--error, #bf1700);
+    }
+  }
+
   .textContainer {
     max-width: calc(100px + (150 - 100) * ((100vw - 768px) / (1280 - 768)));
+  }
+
+  .checkboxContainer {
+    margin-top: 24px;
+    margin-left: 322px;
+    max-width: calc(472px + (698 - 472) * ((100vw - 768px) / (1280 - 768)));
   }
 }
 
 @media screen and (width <= 768px) {
   .fieldset {
     max-width: calc(360px + (704 - 360) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  .button {
+    margin-top: -109px;
   }
 
   .contact {
@@ -261,6 +284,34 @@
   .textNumber {
     font-size: var(--title-h-4-molot-font-size, 66px);
     line-height: var(--title-h-4-molot-line-height, 66px);
+    -webkit-text-stroke: 2px var(--darkblue);
+
+    &Error {
+      color: var(--error, #bf1700) !important;
+      -webkit-text-stroke: var(--error, #bf1700);
+    }
+  }
+
+  .textClue {
+    font-size: var(--title-tel-h-3-font-size, 24px);
+    line-height: var(--title-tel-h-3-line-height, 24px);
+  }
+
+  .checkboxContainer {
+    margin-top: 27px;
+    margin-left: 210px;
+    max-width: calc(272px + (472 - 272) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  .checkboxText {
+    font-size: 20px;
+    line-height: 24px;
+
+    &:before {
+      top: 4px;
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
@@ -269,8 +320,14 @@
     max-width: 360px;
   }
 
+  .button {
+    margin-top: -80px;
+    margin-left: -33.5%;
+  }
+
   .contact {
-    padding: 8px 16px 12px;
+    padding: 8px 16px 14px;
+    border-width: 1px 0px 1px 0px;
   }
 
   .inputContainer {
@@ -279,14 +336,17 @@
 
   .input {
     max-width: 259px;
-    height: 32px;
+    height: 52px;
     font-size: var(--title-tel-h-2-font-size, 32px);
     line-height: var(--title-tel-h-2-line-height, 32px);
   }
 
   .inputError {
     padding: 8px 70px 0;
+    font-size: var(--title-tel-h-3-font-size, 24px);
+    line-height: var(--title-tel-h-3-line-height, 24px);
   }
+
   .textContainer {
     max-width: 49px;
   }
@@ -294,10 +354,33 @@
   .textNumber {
     font-size: var(--title-tel-h-1-molot-font-size, 40px);
     line-height: var(--title-tel-h-1-molot-line-height, 40px);
+    -webkit-text-stroke: 1.2px var(--darkblue);
+
+    &Error {
+      color: var(--error, #bf1700) !important;
+      -webkit-text-stroke: var(--error, #bf1700);
+    }
   }
 
-  .textClue {
-    font-size: var(--title-tel-h-3-font-size, 24px);
-    line-height: var(--title-tel-h-3-line-height, 24px);
+  .checkboxContainer {
+    margin-top: 14px;
+    margin-left: 72px;
+    max-width: 272px;
+  }
+
+  .checkboxText {
+    font-size: 16px;
+    line-height: 18px;
+
+    &:before {
+      left: -56px;
+      bottom: 14px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .checkboxTextConfidential {
+    text-underline-offset: 3px;
   }
 }

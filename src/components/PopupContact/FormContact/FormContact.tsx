@@ -93,7 +93,7 @@ export const FormContact: React.FC<IFormProps> = ({
             <div className={s.textContainer}>
               <span className={cl(s.textNumber, { [s.textNumberError]: errors.email })}>02</span>
               <span className={cl(s.textClue, { [s.textClueError]: errors.email })}>
-                Email/телефон
+                Email / телефон
               </span>
             </div>
           </div>
@@ -138,7 +138,7 @@ export const FormContact: React.FC<IFormProps> = ({
           onChange={onCheckboxClick}
         />
         <span className={s.checkboxText}>
-          Соглашаюсь с обработкой персональных данных <br />и{' '}
+          Соглашаюсь с обработкой персональных&nbsp;данных <br />и{' '}
           <span className={s.checkboxTextConfidential}>политикой конфиденциальности</span>
         </span>
       </label>
