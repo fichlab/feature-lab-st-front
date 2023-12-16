@@ -7,7 +7,7 @@
 }
 
 .fieldset {
-  max-width: 1720px;
+  max-width: calc(1180px + (1720 - 1180) * ((100vw - 1280px) / (1920 - 1280)));
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@
 }
 
 .inputContainer {
-  max-width: 1400px;
+  max-width: calc(1020px + (1400 - 1020) * ((100vw - 1280px) / (1920 - 1280)));
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
@@ -47,7 +47,8 @@
 .input {
   margin: 0;
   padding: 0;
-  max-width: 1180px;
+  max-width: calc(850px + (1180 - 850) * ((100vw - 1280px) / (1920 - 1280)));
+  width: 100%;
   height: 80px;
   border: none;
   resize: none;
@@ -88,7 +89,8 @@
 }
 
 .textContainer {
-  width: 200px;
+  max-width: calc(150px + (200 - 150) * ((100vw - 1280px) / (1920 - 1280)));
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -113,11 +115,10 @@
 
 .textClue {
   color: var(--dark-blue, #002d63);
-  font-family: Germano;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 32px;
+  font-family: var(--title-tel-h-3-font-family, 'Germano-Regular', sans-serif);
+  font-size: var(--title-tel-h-2-font-size, 32px);
+  line-height: var(--title-tel-h-2-line-height, 32px);
+  font-weight: var(--title-tel-h-3-font-weight, 400);
   display: none;
 
   &Error {
@@ -199,12 +200,7 @@
 
 @media screen and (width <= 1280px) {
   .fieldset {
-    max-width: 1180px;
-  }
-
-  .button {
-    margin: -200px auto 0;
-    z-index: 1;
+    max-width: calc(704px + (1180 - 704) * ((100vw - 768px) / (1280 - 768)));
   }
 
   .contact {
@@ -212,22 +208,96 @@
   }
 
   .inputContainer {
-    max-width: 1020px;
+    max-width: calc(664px + (1020 - 664) * ((100vw - 768px) / (1280 - 768)));
+  }
+
+  .input {
+    max-width: calc(544px + (850 - 544) * ((100vw - 768px) / (1280 - 768)));
+    height: 80px;
   }
 
   .inputError {
-    padding: 12px 120px 0px 220px;
-    color: var(--error, #bf1700);
-    text-align: left;
-    font-family: var(--title-h-4-font-family, 'Germano-Regular', sans-serif);
-    font-size: var(--title-h-4-font-size, 48px);
-    line-height: var(--title-h-4-line-height, 48px);
-    font-weight: var(--title-h-4-font-weight, 400);
-    flex: 1;
-    display: none;
+    padding-left: 170px;
+    font-size: var(--title-tel-h-1-font-size, 40px);
+    line-height: var(--title-tel-h-1-line-height, 40px);
+  }
 
-    &Active {
-      display: flex;
-    }
+  .textContainer {
+    max-width: calc(100px + (150 - 100) * ((100vw - 768px) / (1280 - 768)));
+  }
+}
+
+@media screen and (width <= 768px) {
+  .fieldset {
+    max-width: calc(360px + (704 - 360) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  .contact {
+    padding: 4px 20px 12px 20px;
+  }
+
+  .inputContainer {
+    max-width: calc(328px + (664 - 328) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  .input {
+    max-width: calc(259px + (544 - 259) * ((100vw - 360px) / (768 - 360)));
+    height: 64px;
+    font-size: var(--title-h-3-font-size, 64px);
+    line-height: var(--title-h-3-line-height, 64px);
+  }
+
+  .inputError {
+    padding-top: 5px;
+    padding-left: 120px;
+    font-size: var(--title-tel-h-2-font-size, 32px);
+    line-height: var(--title-tel-h-2-line-height, 32px);
+  }
+
+  .textContainer {
+    max-width: calc(49px + (100 - 49) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  .textNumber {
+    font-size: var(--title-h-4-molot-font-size, 66px);
+    line-height: var(--title-h-4-molot-line-height, 66px);
+  }
+}
+
+@media screen and (width <= 360px) {
+  .fieldset {
+    max-width: 360px;
+  }
+
+  .contact {
+    padding: 8px 16px 12px;
+  }
+
+  .inputContainer {
+    max-width: 328px;
+  }
+
+  .input {
+    max-width: 259px;
+    height: 32px;
+    font-size: var(--title-tel-h-2-font-size, 32px);
+    line-height: var(--title-tel-h-2-line-height, 32px);
+  }
+
+  .inputError {
+    padding: 8px 70px 0;
+  }
+  .textContainer {
+    max-width: 49px;
+  }
+
+  .textNumber {
+    font-size: var(--title-tel-h-1-molot-font-size, 40px);
+    line-height: var(--title-tel-h-1-molot-line-height, 40px);
+  }
+
+  .textClue {
+    font-size: var(--title-tel-h-3-font-size, 24px);
+    line-height: var(--title-tel-h-3-line-height, 24px);
   }
 }

@@ -35,3 +35,38 @@
     max-height: 70px;
   }
 }
+
+@media screen and (width <= 768px) {
+  .popupTitle {
+    margin-bottom: 60px;
+    font-size: var(--title-h-4-molot-font-size, 66px);
+    line-height: var(--title-h-4-molot-line-height, 66px);
+  }
+
+  .closeButton {
+    background-image: url(./close_button/close-btn-768.svg);
+    max-width: 45px;
+    max-height: 45px;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media screen and (width <= 360px) {
+  .popupTitle {
+    font-family: var(
+      --title-tel-h-2-molot-font-family,
+      "Molot-Regular",
+      sans-serif
+    );
+    font-size: var(--title-tel-h-2-molot-font-size, 30px);
+    line-height: var(--title-tel-h-2-molot-line-height, 30px);
+  }
+
+  .closeButton {
+    background-image: url(./close_button/close-btn-360.svg);
+    max-width: 32px;
+    max-height: 32px;
+  }
+}
+
