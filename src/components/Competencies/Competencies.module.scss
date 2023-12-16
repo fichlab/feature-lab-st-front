@@ -1,0 +1,345 @@
+.competencies,
+.competencies * {
+  box-sizing: border-box;
+}
+
+.competencies {
+  width: 100%;
+}
+
+.sectionTitle {
+  margin: 0 0 100px 100px;
+
+  font-family: Germano, sans-serif;
+  font-size: 64px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1; /* 100% 64px */
+  color: var(--darkblue, #002d63);
+  text-align: left;
+}
+
+.list {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 100%;
+}
+
+.card {
+  cursor: pointer;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 350px auto min-content;
+  gap: 40px 80px;
+
+  width: 100%;
+  margin-bottom: -352px; /* Adjust the value as needed for spacing between cards */
+  padding: 24px 100px 100px;
+
+  background: var(--white, #fff);
+  border-top: 2px solid var(--dark-blue, #002d63);
+  border-bottom: 2px solid var(--dark-blue, #002d63);
+
+  transition: margin-bottom 0.3s ease;
+
+  &Info {
+    padding: 18px 0;
+
+    font-family: GostTypeB-Standard, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2; // 24px
+    color: var(--darkblue, #002d63);
+    text-align: left;
+  }
+
+  &Title {
+    font-family: Germano, sans-serif;
+    font-size: 140px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 0.86; /* 120px 85.714% */
+    color: var(--darkblue, #002d63);
+    text-align: left;
+  }
+
+  &Number {
+    font-family: Molot-Regular, sans-serif;
+    font-size: 128px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1; /* 100% */
+    color: var(--white, #fff);
+    text-align: right;
+
+    transition: all 0.2s ease;
+
+    -webkit-text-stroke: 3.5px var(--darkblue);
+  }
+
+  &Description {
+    grid-column: 2 / span 1;
+
+    max-width: 800px;
+    height: 190px;
+
+    font-family: 'GOST type B', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.18; // 38px; 118.75%
+    color: var(--darkblue, #002d63);
+    text-align: left;
+  }
+
+  &PlusBtn {
+    display: none;
+
+    :hover {
+      filter: drop-shadow(0 10px 20px rgb(0 45 99 / 30%));
+    }
+
+    :focus {
+      filter: drop-shadow(0 10px 20px rgb(0 45 99 / 30%));
+    }
+
+    :active {
+      transform-origin: center;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover {
+    margin-bottom: 0; /* On hover, remove the negative margin to reveal the full card */
+  }
+
+  &:hover &Number {
+    color: var(--dark-blue, #002d63);
+  }
+}
+
+.cover {
+  position: relative;
+  height: 300px;
+  background: var(--white, #fff);
+}
+
+@media screen and (width <= 1830px) {
+  .card {
+    margin-bottom: -358px; /* Adjust the value as needed for spacing between cards */
+
+    &Title,
+    &Number {
+      font-size: 120px;
+    }
+  }
+}
+
+@media screen and (width <= 1700px) {
+  .card {
+    gap: 28px 32px;
+    margin-bottom: -342px; /* Adjust the value as needed for spacing between cards */
+
+    &Info {
+      padding: 4px 0 0;
+    }
+
+    &Title,
+    &Number {
+      font-size: 100px;
+    }
+
+    &Description {
+      max-width: 51vw;
+    }
+  }
+}
+
+@media screen and (width <= 1500px) {
+  .sectionTitle {
+    margin: 0 0 80px 50px;
+  }
+
+  .card {
+    gap: 28px 32px;
+    margin-bottom: -280px; /* Adjust the value as needed for spacing between cards */
+    padding: 24px 50px 40px;
+
+    &Title,
+    &Number {
+      font-size: 100px;
+    }
+  }
+}
+
+@media screen and (width <= 1400px) {
+  // official  1280 breakpoint
+
+  .card {
+    grid-template-columns: 300px auto min-content;
+    margin-bottom: -286px; /* Adjust the value as needed for spacing between cards */
+
+    &Info {
+      padding: 18px 0;
+    }
+
+    &Title,
+    &number {
+      font-size: 100px;
+      line-height: 1.2; /* 120% */
+    }
+  }
+}
+
+@media screen and (width <= 1275px) {
+  .card {
+    margin-bottom: -250px; /* Adjust the value as needed for spacing between cards */
+
+    &Title {
+      font-size: 7.8vw;
+    }
+
+    &Number {
+      font-size: 7vw;
+    }
+
+    &Description {
+      height: 160px;
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (width <= 1150px) {
+  .card {
+    grid-template-columns: 270px auto min-content;
+    gap: 28px 15px;
+    margin-bottom: -240px; /* Adjust the value as needed for spacing between cards */
+    &Info {
+      padding: 5px 0 0;
+      font-size: 15px;
+    }
+
+    &Title {
+      font-size: 6.4vw;
+    }
+
+    &Number {
+      font-size: 8vw;
+
+      -webkit-text-stroke: 2px var(--darkblue);
+    }
+
+    &Description {
+      font-size: 20px;
+      line-height: 1.2; /* 120% 24px */
+    }
+  }
+}
+
+@media screen and (width <= 900px) {
+  .card {
+    grid-template-columns: 200px auto min-content;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .sectionTitle {
+    margin: 0 0 32px 32px;
+    font-size: 48px;
+  }
+
+  .card {
+    grid-template-columns: auto min-content;
+    gap: 16px 32px;
+    margin-bottom: -210px; /* Adjust the value as needed for spacing between cards */
+    padding: 12px 32px 20px;
+
+    &Info {
+      display: none;
+    }
+
+    &Title {
+      font-size: 64px;
+      line-height: 1; /* 100% 64px */
+    }
+
+    &Number {
+      font-size: 66px;
+    }
+
+    &Description {
+      grid-column: 1 / span 1;
+      max-width: 100%;
+    }
+
+    &PlusBtn {
+      overflow: visible;
+      display: block;
+      place-self: center end;
+
+      max-width: 45px;
+      max-height: 45px;
+    }
+  }
+}
+
+@media screen and (width <= 650px) {
+  .sectionTitle {
+    margin: 0 0 32px 16px;
+    font-size: 8vw;
+  }
+
+  .card {
+    grid-template-columns: auto min-content;
+    gap: 16px 8px;
+    margin-bottom: -205px; /* Adjust the value as needed for spacing between cards */
+    padding: 12px 16px 20px;
+
+    &Title,
+    &Number {
+      font-size: 48px;
+    }
+  }
+}
+
+@media screen and (width <= 460px) {
+  .sectionTitle {
+    margin: 0 0 32px 16px;
+  }
+
+  .card {
+    grid-template-columns: auto min-content;
+    gap: 16px 8px;
+    margin-bottom: -210px; /* Adjust the value as needed for spacing between cards */
+    padding: 12px 16px 20px;
+
+    &Title {
+      font-size: 32px;
+    }
+
+    &Number {
+      font-size: 40px;
+    }
+
+    &PlusBtn {
+      max-width: 32px;
+      max-height: 32px;
+    }
+  }
+}
+
+@media screen and (width <= 360px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .card {
+    margin-bottom: -209px; /* Adjust the value as needed for spacing between cards */
+  }
+}
