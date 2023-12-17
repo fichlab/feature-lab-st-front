@@ -1,0 +1,111 @@
+.labSection,
+.labSection * {
+  box-sizing: border-box;
+}
+
+.labSection {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding-bottom: 300px;
+}
+
+.sectionTitle {
+  width: 100%;
+  margin: 0 0 100px;
+  padding: 0 0 0 100px;
+
+  font-family: Germano, sans-serif;
+  font-size: 64px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1; /* 100% 64px */
+  color: var(--darkblue, #002d63);
+  text-align: left;
+}
+
+.labButton {
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.list {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  min-height: 850px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  width: 100%;
+  max-width: 450px;
+
+  &Number {
+    font-family: Molot, sans-serif;
+    font-size: 100px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1; /* 100% */
+    color: var(--white, #fff);
+    text-align: center;
+
+    -webkit-text-stroke: 3.5px var(--darkblue);
+  }
+
+  &Text {
+    width: 100%;
+
+    font-family: 'GOST type B', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.19; // 38px; /* 118.75% */
+    color: var(--dark-blue, #002d63);
+  }
+}
+
+.cardPosition {
+  position: absolute;
+
+  &_1 {
+    top: 0;
+    right: 188px;
+  }
+
+  &_2 {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+
+  &_3 {
+    right: 188px;
+    bottom: 0;
+  }
+
+  &_4 {
+    bottom: 0;
+    left: 188px;
+  }
+
+  &_5 {
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+
+  &_6 {
+    top: 0;
+    left: 188px;
+  }
+}
