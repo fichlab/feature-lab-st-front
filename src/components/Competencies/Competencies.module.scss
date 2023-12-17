@@ -3,8 +3,14 @@
   box-sizing: border-box;
 }
 
+// $card-padding-top: 24px;
+// $card-title-font-size: 140px;
+// $card-max-height: calc($card-padding-top + $card-title-font-size - 20px);
+
 .competencies {
+  overflow: hidden;
   width: 100%;
+  margin-bottom: 200px;
 }
 
 .sectionTitle {
@@ -20,32 +26,42 @@
 }
 
 .list {
-  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-
   width: 100%;
 }
 
 .card {
+  // --card-padding-top: 24px;
+  // --card-title-font-size: 140px;
+  // --card-max-height: calc(var(--card-padding-top) + var(--card-title-font-size) - 20px);
+
   cursor: pointer;
 
   position: relative;
 
+  overflow: hidden;
   display: grid;
   grid-template-columns: 350px auto min-content;
   gap: 40px 80px;
 
   width: 100%;
-  margin-bottom: -352px; /* Adjust the value as needed for spacing between cards */
+  max-height: 140px;
+
+  // max-height: $card-max-height;
+  // max-height: var(--card-max-height);
+
   padding: 24px 100px 100px;
+
+  // padding: $card-padding-top 100px 100px;
+  // padding: var(--card-padding-top) 100px 100px;
 
   background: var(--white, #fff);
   border-top: 2px solid var(--dark-blue, #002d63);
   border-bottom: 2px solid var(--dark-blue, #002d63);
 
-  transition: margin-bottom 0.3s ease;
+  transition: max-height 0.2s ease-in;
 
   &Info {
     padding: 18px 0;
@@ -61,9 +77,14 @@
   &Title {
     font-family: Germano, sans-serif;
     font-size: 140px;
+
+    // font-size: $card-title-font-size;
+    // font-size: var(--card-title-font-size);
     font-weight: 300;
     font-style: normal;
-    line-height: 0.86; /* 120px 85.714% */
+
+    // line-height: 0.86; /* 120px 85.714% */
+    line-height: 1;
     color: var(--darkblue, #002d63);
     text-align: left;
   }
@@ -115,7 +136,11 @@
   }
 
   &:hover {
-    margin-bottom: 0; /* On hover, remove the negative margin to reveal the full card */
+    // margin-bottom: 0; /* On hover, remove the negative margin to reveal the full card */
+    overflow: visible;
+
+    // height: 100%;
+    max-height: 500px;
   }
 
   &:hover &Number {
@@ -123,19 +148,24 @@
   }
 }
 
-.cover {
-  position: relative;
-  height: 300px;
-  background: var(--white, #fff);
-}
+// .cover {
+//   position: relative;
+//   height: 300px;
+//   background: var(--white, #fff);
+// }
 
 @media screen and (width <= 1830px) {
   .card {
-    margin-bottom: -358px; /* Adjust the value as needed for spacing between cards */
+    // margin-bottom: -358px; /* Adjust the value as needed for spacing between cards */
+    // --card-padding-top: 1px;
+    // --card-title-font-size: 1px;
+    // --card-max-height: calc(var(--card-padding-top) + var(--card-title-font-size) - 2000px);
 
     &Title,
     &Number {
       font-size: 120px;
+
+      // font-size: var(--card-title-font-size);
     }
   }
 }
@@ -143,7 +173,8 @@
 @media screen and (width <= 1700px) {
   .card {
     gap: 28px 32px;
-    margin-bottom: -342px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -342px; /* Adjust the value as needed for spacing between cards */
 
     &Info {
       padding: 4px 0 0;
@@ -167,7 +198,8 @@
 
   .card {
     gap: 28px 32px;
-    margin-bottom: -280px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -280px; /* Adjust the value as needed for spacing between cards */
     padding: 24px 50px 40px;
 
     &Title,
@@ -182,7 +214,8 @@
 
   .card {
     grid-template-columns: 300px auto min-content;
-    margin-bottom: -286px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -286px; /* Adjust the value as needed for spacing between cards */
 
     &Info {
       padding: 18px 0;
@@ -198,7 +231,7 @@
 
 @media screen and (width <= 1275px) {
   .card {
-    margin-bottom: -250px; /* Adjust the value as needed for spacing between cards */
+    // margin-bottom: -250px; /* Adjust the value as needed for spacing between cards */
 
     &Title {
       font-size: 7.8vw;
@@ -219,7 +252,8 @@
   .card {
     grid-template-columns: 270px auto min-content;
     gap: 28px 15px;
-    margin-bottom: -240px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -240px; /* Adjust the value as needed for spacing between cards */
     &Info {
       padding: 5px 0 0;
       font-size: 15px;
@@ -257,7 +291,8 @@
   .card {
     grid-template-columns: auto min-content;
     gap: 16px 32px;
-    margin-bottom: -210px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -210px; /* Adjust the value as needed for spacing between cards */
     padding: 12px 32px 20px;
 
     &Info {
@@ -298,7 +333,8 @@
   .card {
     grid-template-columns: auto min-content;
     gap: 16px 8px;
-    margin-bottom: -205px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -205px; /* Adjust the value as needed for spacing between cards */
     padding: 12px 16px 20px;
 
     &Title,
@@ -316,7 +352,8 @@
   .card {
     grid-template-columns: auto min-content;
     gap: 16px 8px;
-    margin-bottom: -210px; /* Adjust the value as needed for spacing between cards */
+
+    // margin-bottom: -210px; /* Adjust the value as needed for spacing between cards */
     padding: 12px 16px 20px;
 
     &Title {
@@ -340,6 +377,6 @@
   }
 
   .card {
-    margin-bottom: -209px; /* Adjust the value as needed for spacing between cards */
+    // margin-bottom: -209px; /* Adjust the value as needed for spacing between cards */
   }
 }

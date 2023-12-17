@@ -25,14 +25,14 @@ export const Competencies: FC<ICompetenciesProps> = ({ className = '' }) => {
         {cards.map((card, index) => (
           <li className={s.card} key={uuidv4()}>
             <div className={s.cardInfo}>{card.info}</div>
-            <h3 className={s.cardTitle}>{card.title}</h3>
+            <h3 className={s.cardTitle}>{card.title.toUpperCase()}</h3>
             <div className={cl(s.cardNumber)}>{(index + 1).toString().padStart(2, '0')}</div>
             <div className={s.cardDescription}>{card.description}</div>
             <PlusBtn onClick={() => handlePlusBtnClick(card.url)} className={s.cardPlusBtn} />
           </li>
         ))}
       </ul>
-      <div className={s.cover} />
+      {/* <div className={s.cover} /> */}
     </section>
   );
 };
