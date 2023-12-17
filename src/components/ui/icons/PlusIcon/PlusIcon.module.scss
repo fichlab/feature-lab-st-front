@@ -1,0 +1,37 @@
+.plusIcon {
+  cursor: pointer;
+  border-radius: 60px;
+  transition: 0.3s box-shadow ease-in;
+
+  &:focus,
+  &:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-box-shadow);
+  }
+}
+
+@media screen and (width <= 1280px) {
+  .plusIcon {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (width <= 768px) {
+  .plusIcon {
+    width: 45px;
+    height: 45px;
+
+    & rect,
+    & line {
+      stroke-width: 2px;
+    }
+  }
+}
+
+@media screen and (width <= 360px) {
+  .plusIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
