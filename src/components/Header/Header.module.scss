@@ -157,6 +157,7 @@
     transition: transform 0.3s ease;
 
     &_rotate {
+      transform-origin: center;
       transform: rotate(180deg);
     }
   }
