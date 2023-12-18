@@ -48,6 +48,10 @@ export const FormContact: React.FC<IFormProps> = ({
     handleChange(e);
   };
 
+  const isEmpty = () => {
+    return !values || !!Object.keys(values).filter((x: string) => !values[x]).length;
+  };
+
   return (
     <form className={s.form} method="POST" onSubmit={onSubmit}>
       <fieldset className={s.fieldset}>
@@ -147,7 +151,7 @@ export const FormContact: React.FC<IFormProps> = ({
         type="submit"
         theme="white"
         text="Отправить"
-        disabled={!isValid || !isChecked}
+        disabled={!isValid || !isChecked || isEmpty()}
         isLoading={isLoading}
       />
     </form>
