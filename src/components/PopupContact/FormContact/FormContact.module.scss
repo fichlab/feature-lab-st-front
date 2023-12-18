@@ -198,6 +198,7 @@ textarea::placeholder {
 .input:focus + .textContainer {
   .textNumber {
     color: var(--dark-blue, #002d63);
+   -webkit-text-stroke:unset;
   }
 
   .textClue {
