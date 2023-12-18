@@ -72,6 +72,11 @@
   }
 }
 
+textarea::placeholder {
+  line-height: 80px;
+}
+
+
 .inputError {
   padding: 12px 120px 0px 220px;
   color: var(--error, #bf1700);
@@ -182,6 +187,10 @@
   background-image: url(./checkbox/checkboxChecked.svg);
 }
 
+.input:focus::placeholder {
+  color: transparent;
+}
+
 .input:focus + .textContainer {
   .textNumber {
     color: var(--dark-blue, #002d63);
@@ -268,6 +277,14 @@
     height: 64px;
     font-size: var(--title-h-3-font-size, 64px);
     line-height: var(--title-h-3-line-height, 64px);
+
+    &::placeholder {
+      letter-spacing: 0;
+    }
+  }
+
+  textarea::placeholder {
+    line-height: 64px;
   }
 
   .inputError {
@@ -339,6 +356,10 @@
     height: 52px;
     font-size: var(--title-tel-h-2-font-size, 32px);
     line-height: var(--title-tel-h-2-line-height, 32px);
+  }
+
+  textarea::placeholder {
+    line-height: 52px;
   }
 
   .inputError {

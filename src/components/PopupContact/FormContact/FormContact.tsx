@@ -105,7 +105,7 @@ export const FormContact: React.FC<IFormProps> = ({
           <div className={s.inputContainer}>
             <textarea
               className={s.input}
-              aria-label="Input project"
+              aria-label="Textarea project"
               value={values.project}
               onChange={onTextareaChange}
               name="project"
