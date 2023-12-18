@@ -1,0 +1,18 @@
+export { ArrowIcon } from './baseIcons/ArrowIcon';
+export { CubeIcon } from './baseIcons/CubeIcon';
+export { ArrowFatRightIcon } from './baseIcons/ArrowFatRightIcon';
+export { CardholderIcon } from './baseIcons/CardholderIcon';
+export { FolderOpenIcon } from './baseIcons/FolderOpenIcon';
+export { GearSixIcon } from './baseIcons/GearSixIcon';
+export { SkipForwardIcon } from './baseIcons/SkipForwardIcon';
+export { CrossIcon } from './CrossIcon/CrossIcon';
+export { EllipseIcon } from './EllipseIcon/EllipseIcon';
+export { LogoIcon } from './LogoIcon/LogoIcon';
+export { PlusIcon } from './PlusIcon/PlusIcon';
+export { QuestionIcon } from './QuestionIcon/QuestionIcon';
+export { LinkIcon } from './socialsIcons/LinkIcon';
+export { TelegramIcon } from './socialsIcons/TelegramIcon';
+export { WhatsupIcon } from './socialsIcons/WhatsupIcon';
+export { CrossInCircleIcon } from './CrossInCircleIcon/CrossInCircleIcon';
+export { SpinnerIcon } from './SpinnerIcon/SpinnerIcon';
+export { type IconProps } from './EllipseIcon/EllipseIcon';
