@@ -133,7 +133,7 @@ textarea::placeholder {
 
 .checkboxContainer {
   margin-top: 32px;
-  margin-left: 452px;
+  margin-left: calc(322px + (452 - 322) * ((100vw - 1280px) / (1920 - 1280)));
   max-width: calc(698px + (1028 - 698) * ((100vw - 1280px) / (1920 - 1280)));
   width: 100%;
   display: flex;
@@ -250,8 +250,42 @@ textarea::placeholder {
 
   .checkboxContainer {
     margin-top: 24px;
-    margin-left: 322px;
+    margin-left: calc(210px + (322 - 210) * ((100vw - 768px) / (1280 - 768)));
     max-width: calc(472px + (698 - 472) * ((100vw - 768px) / (1280 - 768)));
+  }
+}
+
+
+@media screen and (width <= 1060px) {
+  .input {
+    max-width: calc(259px + (544 - 259) * ((100vw - 360px) / (768 - 360)));
+    height: 64px;
+    font-size: var(--title-h-3-font-size, 64px);
+    line-height: var(--title-h-3-line-height, 64px);
+
+    &::placeholder {
+      letter-spacing: 0;
+    }
+  }
+
+  textarea::placeholder {
+    line-height: 64px;
+  }
+
+  .textNumber {
+    font-size: var(--title-h-4-molot-font-size, 66px);
+    line-height: var(--title-h-4-molot-line-height, 66px);
+    -webkit-text-stroke: 2px var(--darkblue);
+
+    &Error {
+      color: var(--error, #bf1700) !important;
+      -webkit-text-stroke: var(--error, #bf1700);
+    }
+  }
+
+  .textClue {
+    font-size: var(--title-tel-h-3-font-size, 24px);
+    line-height: var(--title-tel-h-3-line-height, 24px);
   }
 }
 
@@ -272,21 +306,6 @@ textarea::placeholder {
     max-width: calc(328px + (664 - 328) * ((100vw - 360px) / (768 - 360)));
   }
 
-  .input {
-    max-width: calc(259px + (544 - 259) * ((100vw - 360px) / (768 - 360)));
-    height: 64px;
-    font-size: var(--title-h-3-font-size, 64px);
-    line-height: var(--title-h-3-line-height, 64px);
-
-    &::placeholder {
-      letter-spacing: 0;
-    }
-  }
-
-  textarea::placeholder {
-    line-height: 64px;
-  }
-
   .inputError {
     padding-top: 5px;
     padding-left: 120px;
@@ -298,25 +317,9 @@ textarea::placeholder {
     max-width: calc(49px + (100 - 49) * ((100vw - 360px) / (768 - 360)));
   }
 
-  .textNumber {
-    font-size: var(--title-h-4-molot-font-size, 66px);
-    line-height: var(--title-h-4-molot-line-height, 66px);
-    -webkit-text-stroke: 2px var(--darkblue);
-
-    &Error {
-      color: var(--error, #bf1700) !important;
-      -webkit-text-stroke: var(--error, #bf1700);
-    }
-  }
-
-  .textClue {
-    font-size: var(--title-tel-h-3-font-size, 24px);
-    line-height: var(--title-tel-h-3-line-height, 24px);
-  }
-
   .checkboxContainer {
     margin-top: 27px;
-    margin-left: 210px;
+    margin-left: calc(72px + (210 - 72) * ((100vw - 360px) / (768 - 360)));
     max-width: calc(272px + (472 - 272) * ((100vw - 360px) / (768 - 360)));
   }
 
@@ -332,6 +335,30 @@ textarea::placeholder {
   }
 }
 
+
+@media screen and (width <= 690px) {
+  .input {
+    height: 52px;
+    font-size: calc(var(--title-h-3-font-size, 64px) * 0.7);
+    line-height: calc(var(--title-h-3-line-height, 64px) * 0.7);
+  }
+
+  textarea::placeholder {
+    line-height: 52px;
+  }
+
+  .textNumber {
+    font-size: var(--title-tel-h-1-molot-font-size, 40px);
+    line-height: var(--title-tel-h-1-molot-line-height, 40px);
+    -webkit-text-stroke: 1.2px var(--darkblue);
+
+    &Error {
+      color: var(--error, #bf1700) !important;
+      -webkit-text-stroke: var(--error, #bf1700);
+    }
+  }
+}
+
 @media screen and (width <= 360px) {
   .fieldset {
     max-width: 360px;
@@ -339,7 +366,7 @@ textarea::placeholder {
 
   .button {
     margin-top: -80px;
-    margin-left: -33.5%;
+    margin-left: -120px;
   }
 
   .contact {

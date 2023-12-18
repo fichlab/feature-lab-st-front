@@ -23,12 +23,14 @@
   z-index: 2;
 }
 
-@media screen and (width <= 1280px) {
+@media screen and (width <= 1430px) {
   .popupTitle {
     font-size: var(--title-h-2-molot-font-size, 100px);
     line-height: var(--title-h-2-molot-line-height, 100px);
   }
+}
 
+@media screen and (width <= 1280px) {
   .closeButton {
     background-image: url(./close_button/close-btn-1280.svg);
     max-width: 70px;
@@ -36,13 +38,15 @@
   }
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1060px) {
   .popupTitle {
     margin-bottom: 60px;
     font-size: var(--title-h-4-molot-font-size, 66px);
     line-height: var(--title-h-4-molot-line-height, 66px);
   }
+}
 
+@media screen and (width <= 768px) {
   .closeButton {
     background-image: url(./close_button/close-btn-768.svg);
     max-width: 45px;
@@ -51,6 +55,22 @@
     right: 20px;
   }
 }
+
+@media screen and (width <= 690px) {
+  .popupTitle {
+    font-size: calc(var(--title-h-4-molot-font-size, 66px) * 0.7);
+    line-height: calc(var(--title-h-4-molot-line-height, 66px) * 0.7);
+  }
+}
+
+
+@media screen and (width <= 460px) {
+  .popupTitle {
+    font-size: calc(var(--title-h-4-molot-font-size, 66px) * 0.5);
+    line-height: calc(var(--title-h-4-molot-line-height, 66px) * 0.5);
+  }
+}
+
 
 @media screen and (width <= 360px) {
   .popupTitle {
