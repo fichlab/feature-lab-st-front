@@ -1,5 +1,6 @@
 .form {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
@@ -17,7 +18,10 @@
 }
 
 .button {
-  margin: -200px auto 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -76,7 +80,6 @@ textarea::placeholder {
   line-height: 80px;
 }
 
-
 .inputError {
   padding: 12px 120px 0px 220px;
   color: var(--error, #bf1700);
@@ -134,6 +137,7 @@ textarea::placeholder {
 .checkboxContainer {
   margin-top: 32px;
   margin-left: calc(322px + (452 - 322) * ((100vw - 1280px) / (1920 - 1280)));
+  margin-bottom: 800px;
   max-width: calc(698px + (1028 - 698) * ((100vw - 1280px) / (1920 - 1280)));
   width: 100%;
   display: flex;
@@ -212,10 +216,6 @@ textarea::placeholder {
     max-width: calc(704px + (1180 - 704) * ((100vw - 768px) / (1280 - 768)));
   }
 
-  .button {
-    margin-top: -110px;
-  }
-
   .contact {
     padding: 8px 80px 20px;
   }
@@ -251,10 +251,10 @@ textarea::placeholder {
   .checkboxContainer {
     margin-top: 24px;
     margin-left: calc(210px + (322 - 210) * ((100vw - 768px) / (1280 - 768)));
+    margin-bottom: 590px;
     max-width: calc(472px + (698 - 472) * ((100vw - 768px) / (1280 - 768)));
   }
 }
-
 
 @media screen and (width <= 1060px) {
   .input {
@@ -287,15 +287,15 @@ textarea::placeholder {
     font-size: var(--title-tel-h-3-font-size, 24px);
     line-height: var(--title-tel-h-3-line-height, 24px);
   }
+
+  .checkboxContainer {
+    margin-left: calc(72px + (190 - 72) * ((100vw - 360px) / (768 - 360)));
+  }
 }
 
 @media screen and (width <= 768px) {
   .fieldset {
     max-width: calc(360px + (704 - 360) * ((100vw - 360px) / (768 - 360)));
-  }
-
-  .button {
-    margin-top: -109px;
   }
 
   .contact {
@@ -335,7 +335,6 @@ textarea::placeholder {
   }
 }
 
-
 @media screen and (width <= 690px) {
   .input {
     height: 52px;
@@ -362,11 +361,6 @@ textarea::placeholder {
 @media screen and (width <= 360px) {
   .fieldset {
     max-width: 360px;
-  }
-
-  .button {
-    margin-top: -80px;
-    margin-left: -120px;
   }
 
   .contact {
@@ -413,6 +407,7 @@ textarea::placeholder {
   .checkboxContainer {
     margin-top: 14px;
     margin-left: 72px;
+    margin-bottom: 520px;
     max-width: 272px;
   }
 
