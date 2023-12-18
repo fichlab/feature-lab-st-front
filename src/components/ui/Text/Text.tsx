@@ -22,7 +22,7 @@ export type TextProps = {
   outlined?: boolean;
 };
 
-const Text: React.FC<TextProps> = ({
+export const Text: React.FC<TextProps> = ({
   className = '',
   view = 'text-3',
   tag = 'div',
@@ -50,5 +50,3 @@ const Text: React.FC<TextProps> = ({
     </Tag>
   );
 };
-
-export default Text;
