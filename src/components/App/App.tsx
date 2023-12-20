@@ -1,5 +1,7 @@
 import React from 'react';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import AboutUs from '../../pages/AboutUs/AboutUs';
+import Home from '../../pages/Home/Home';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import Main from '../Main/Main';
@@ -18,7 +20,9 @@ const App: React.FC = () => {
     <div className={s.page}>
       <Header />
       <Main>
-        <Routes>{/* <Route path="/" element={} /> */}</Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Main>
 
       <PopupContact isOpen={isPopupContactOpen} onClose={closePopupContactPopups} />
