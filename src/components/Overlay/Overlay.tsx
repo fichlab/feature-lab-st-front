@@ -26,9 +26,7 @@ const Overlay: React.FC<IOverlayProps> = ({ onClose, isOpen, children }) => {
 
   if (!popupRoot) return null;
   return ReactDOM.createPortal(
-    <div className={cl(s.overlay, { [s.overlayOpen]: isOpen })}>
-      <div className={s.overlayContainer}>{children}</div>
-    </div>,
+    <div className={cl(s.overlay, { [s.overlayOpen]: isOpen })}>{children}</div>,
     popupRoot,
   );
 };

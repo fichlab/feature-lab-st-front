@@ -32,16 +32,23 @@ export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpe
 
   return isOpen ? (
     <Overlay onClose={onClose} isOpen={isOpen}>
-      <h2 className={s.popupTitle}>{title}</h2>
-      <button className={s.closeButton} type="button" aria-label="Close popup" onClick={onClose} />
-      <FormContact
-        handleChange={handleChange}
-        onSubmit={handleSubmit}
-        errors={errors}
-        isValid={isValid}
-        values={values}
-        isLoading={isLoading}
-      />
+      <div className={s.popupContainer}>
+        <h2 className={s.popupTitle}>{title}</h2>
+        <button
+          className={s.closeButton}
+          type="button"
+          aria-label="Close popup"
+          onClick={onClose}
+        />
+        <FormContact
+          handleChange={handleChange}
+          onSubmit={handleSubmit}
+          errors={errors}
+          isValid={isValid}
+          values={values}
+          isLoading={isLoading}
+        />
+      </div>
     </Overlay>
   ) : (
     <div />
