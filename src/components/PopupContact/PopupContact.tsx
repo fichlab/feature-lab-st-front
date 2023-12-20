@@ -5,12 +5,11 @@ import { FormContact } from './FormContact/FormContact';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 
 type IPopupProps = {
-  title?: string;
   onClose: () => void;
   isOpen: boolean;
 };
 
-export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpen }) => {
+export const PopupContact: React.FC<IPopupProps> = ({ onClose, isOpen }) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation({
@@ -33,7 +32,7 @@ export const PopupContact: React.FC<IPopupProps> = ({ title = '', onClose, isOpe
   return isOpen ? (
     <Overlay onClose={onClose} isOpen={isOpen}>
       <div className={s.popupContainer}>
-        <h2 className={s.popupTitle}>{title}</h2>
+        <h2 className={s.popupTitle}>Свяжитесь с нами</h2>
         <button
           className={s.closeButton}
           type="button"

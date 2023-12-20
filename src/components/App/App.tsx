@@ -20,11 +20,7 @@ const App: React.FC = () => {
         <Routes>{/* <Route path="/" element={} /> */}</Routes>
       </Main>
 
-      <PopupContact
-        isOpen={isPopupContactOpen}
-        onClose={closePopupContactPopups}
-        title="Свяжитесь с нами"
-      />
+      <PopupContact isOpen={isPopupContactOpen} onClose={closePopupContactPopups} />
       <Footer />
     </div>
   );
