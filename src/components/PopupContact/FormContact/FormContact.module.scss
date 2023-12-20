@@ -27,7 +27,7 @@
 
 .contact {
   border: solid var(--darkblue, #002d63);
-  border-width: 2px 0px 2px 0px;
+  border-width: 2px 0px;
   padding: 6px 160px 22px;
   display: flex;
   flex-direction: column;
@@ -56,6 +56,7 @@
   height: 80px;
   border: none;
   resize: none;
+  color: var(--dark-blue, #002D63);
   font-family: var(--title-h-2-font-family, 'Germano-Regular', sans-serif);
   font-size: var(--title-h-2-font-size, 80px);
   line-height: var(--title-h-2-line-height, 80px);
@@ -366,7 +367,7 @@ textarea::placeholder {
 
   .contact {
     padding: 8px 16px 14px;
-    border-width: 1px 0px 1px 0px;
+    border-width: 1px 0px;
   }
 
   .inputContainer {
