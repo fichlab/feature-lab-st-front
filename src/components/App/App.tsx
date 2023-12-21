@@ -28,10 +28,10 @@ const App: React.FC = () => {
       </Main>
 
       <PopupContact isOpen={isPopupContactOpen} onClose={closePopupContactPopups} />
+      <PopupFeedback isOpen={isPopupFeedbackOpen} onClose={closePopupFeedbackPopup} />
 
       <Footer />
       <CookiesToastContainer />
-      <PopupFeedback isOpen={isPopupFeedbackOpen} onClose={closePopupFeedbackPopup} />
     </div>
   );
 };
