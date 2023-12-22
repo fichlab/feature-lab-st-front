@@ -8,6 +8,7 @@ import { PopupContact } from '../PopupContact/PopupContact';
 import { CookiesToastContainer } from '../ui/CookiesToastContainer/CookiesToastContainer';
 import { PopupFeedback } from '../PopupFeedback/PopupFeedback';
 import s from './App.module.scss';
+import { AboutUs } from '../../pages/AboutUs/AboutUs';
 
 const App: React.FC = () => {
   const [isPopupContactOpen, setPopupContactIsOpen] = React.useState(false);
@@ -27,6 +28,7 @@ const App: React.FC = () => {
       <Main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </Main>
 
