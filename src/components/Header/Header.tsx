@@ -2,12 +2,13 @@ import cl from 'classnames';
 import { useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/svg/logo.svg';
+import { ROUTE_COMPETENCIES, SUBROUTE_GAMEDEV } from '../../constants/constants';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
-import { SubMenu } from './SubMenu/SubMenu';
 import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
-import Arrow from './svg/Icon-arrow.svg?svgr';
+import { SubMenu } from './SubMenu/SubMenu';
 import { SubMenuCarousel } from './SubMenuCarousel/SubMenuCarousel';
+import Arrow from './svg/Icon-arrow.svg?svgr';
 
 export const Header: React.FC = () => {
   const { scrollDirection, currentScrollY } = useScrollDirection();
@@ -16,7 +17,13 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const competenciesPages = ['/about-us', '/gamedev', '/gamedev1', '/gamedev2', '/gamedev3'];
+  const competenciesPages = [
+    ROUTE_COMPETENCIES,
+    SUBROUTE_GAMEDEV,
+    '/gamedev1',
+    '/gamedev2',
+    '/gamedev3',
+  ];
   const isCompetenciesPage = competenciesPages.includes(location.pathname);
 
   const handleCompetenciesBtnClick = () => {
@@ -24,7 +31,7 @@ export const Header: React.FC = () => {
     // The first tap is the same as a hover on descktop; it will do nothing but open the sub-menu.
     // The second tap will navigate to /about-us.
     if (window.innerWidth > 768 || isSubMenuVisible) {
-      navigate('/about-us');
+      navigate(ROUTE_COMPETENCIES);
     }
   };
 
