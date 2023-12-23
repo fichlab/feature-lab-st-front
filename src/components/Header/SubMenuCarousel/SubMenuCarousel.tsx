@@ -1,6 +1,7 @@
 import cl from 'classnames';
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ROUTE_GAMEDEV } from '../../../constants/constants';
 import s from './SubMenuCarousel.module.scss';
 
 export interface ISubMenuCarouselProps {
@@ -42,7 +43,7 @@ export const SubMenuCarousel: FC<ISubMenuCarouselProps> = ({ className = '' }) =
           </NavLink>
         </li>
         <li className={s.carouselItem}>
-          <NavLink to="/" className={s.carouselLink}>
+          <NavLink to={ROUTE_GAMEDEV} className={s.carouselLink}>
             Gamedev
           </NavLink>
         </li>
