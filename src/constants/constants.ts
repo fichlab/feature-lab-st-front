@@ -10,5 +10,8 @@ export const MAX_LENGTH_PROJECT = 500;
 export const ROUTE_HOME = '/';
 export const ROUTE_COMPETENCIES = '/competencies';
 
-// /competencies subroutes
-export const ROUTE_GAMEDEV = `${ROUTE_COMPETENCIES}/gamedev`;
+// competencies subroutes
+export const SUBROUTE_GAMEDEV = `gamedev`;
+
+// full route paths for subroutes
+export const ROUTE_GAMEDEV = `${ROUTE_COMPETENCIES}/${SUBROUTE_GAMEDEV}`;
