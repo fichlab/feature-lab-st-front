@@ -21,7 +21,7 @@
   &List {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    row-gap: 20px;
     align-items: flex-start;
     justify-content: flex-start;
 
@@ -77,6 +77,10 @@
 
     &_visible {
       max-height: 1000px; // should be bigger than self original height for transition:max-height to work
+    }
+
+    &_hidden {
+      display: none;
     }
 
     &List {

@@ -7,37 +7,23 @@ import { SubMenu } from './SubMenu/SubMenu';
 import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
 import Arrow from './svg/Icon-arrow.svg?svgr';
+import { SubMenuCarousel } from './SubMenuCarousel/SubMenuCarousel';
 
 export const Header: React.FC = () => {
-  // const headerRef = useRef<HTMLDivElement | null>(null);
   const { scrollDirection, currentScrollY } = useScrollDirection();
-  const [isCompetenciesMenuVisible, setCompetenciesMenuVisible] = useState(false);
+  const [isSubMenuVisible, setSubMenuVisible] = useState(false);
   const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isCompetenciesLinkBtnActive = () => {
-    switch (location.pathname) {
-      case '/about-us':
-        return true;
-      case '/gamedev': // example
-        return true;
-      case '/gamedev1': // example
-        return true;
-      case '/gamedev2': // example
-        return true;
-      case '/gamedev3': // example
-        return true;
-      default:
-        return false;
-    }
-  };
+  const competenciesPages = ['/about-us', '/gamedev', '/gamedev1', '/gamedev2', '/gamedev3'];
+  const isCompetenciesPage = competenciesPages.includes(location.pathname);
 
   const handleCompetenciesBtnClick = () => {
     // On mobile, a double tap is needed to navigate to /about-us.
     // The first tap is the same as a hover on descktop; it will do nothing but open the sub-menu.
     // The second tap will navigate to /about-us.
-    if (window.innerWidth > 768 || isCompetenciesMenuVisible) {
+    if (window.innerWidth > 768 || isSubMenuVisible) {
       navigate('/about-us');
     }
   };
@@ -48,7 +34,6 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      // ref={headerRef}
       className={cl(s.header, {
         [s.header_hidden]: !isNavMobileOpen && scrollDirection === 'down',
       })}>
@@ -59,7 +44,10 @@ export const Header: React.FC = () => {
         <Link to="/" className={s.logo}>
           <img title="Вернуться на главную" className={s.logo} src={Logo} alt="Logo" />
         </Link>
-        <nav className={cl(s.nav, { [s.navProfile]: false, [s.navMobileOpen]: isNavMobileOpen })}>
+
+        <nav
+          aria-label="Основное меню"
+          className={cl(s.nav, { [s.navProfile]: false, [s.navMobileOpen]: isNavMobileOpen })}>
           <ul className={cl(s.list)}>
             <li className={cl(s.listItem, s.linkToMainPage)}>
               <NavLink to="/" className={({ isActive }) => (isActive ? s.linkActive : '')}>
@@ -69,22 +57,24 @@ export const Header: React.FC = () => {
 
             <li
               className={cl(s.listItem, s.listItemSubMenu)}
-              onMouseEnter={() => setCompetenciesMenuVisible(true)}
-              onMouseLeave={() => setCompetenciesMenuVisible(false)}>
+              onMouseEnter={() => setSubMenuVisible(true)}
+              onMouseLeave={() => setSubMenuVisible(false)}>
               <button
                 type="button"
                 onClick={handleCompetenciesBtnClick}
                 className={cl(s.btnSubmenuOpen, {
-                  [s.linkActive]: isCompetenciesLinkBtnActive(),
+                  [s.linkActive]: isCompetenciesPage,
                 })}>
                 Компетенции
-                <Arrow
-                  className={cl(s.arrow, {
-                    [s.arrow_rotate]: isCompetenciesMenuVisible,
-                  })}
-                />
+                {!isCompetenciesPage && (
+                  <Arrow
+                    className={cl(s.arrow, {
+                      [s.arrow_rotate]: isSubMenuVisible,
+                    })}
+                  />
+                )}
               </button>
-              <SubMenu isVisible={isCompetenciesMenuVisible} />
+              <SubMenu isVisible={isSubMenuVisible} isCompetenciesPage={isCompetenciesPage} />
             </li>
             <li className={cl(s.listItem)}>
               <NavLink
@@ -119,6 +109,7 @@ export const Header: React.FC = () => {
 
         <HamburgerBtn onClick={handleBurgerBtnClick} />
       </div>
+      {isCompetenciesPage && <SubMenuCarousel />}
     </header>
   );
 };

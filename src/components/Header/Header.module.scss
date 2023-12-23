@@ -79,23 +79,21 @@
   }
 }
 
-.btn {
-  &SubmenuOpen {
-    position: relative;
-    z-index: 1;
+.btnSubmenuOpen {
+  position: relative;
+  z-index: 1;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    width: 100%;
+  width: 100%;
 
-    &:hover {
-      background: var(
-        --radialblue-45,
-        radial-gradient(closest-side, rgb(3 64 137 / 45%) 0%, rgb(255 255 255 / 0%) 100%)
-      );
-    }
+  &:hover {
+    background: var(
+      --radialblue-45,
+      radial-gradient(closest-side, rgb(3 64 137 / 45%) 0%, rgb(255 255 255 / 0%) 100%)
+    );
   }
 }
 
@@ -154,9 +152,18 @@
 }
 
 @media screen and (width <= 768px) {
+  .header {
+    padding-bottom: 20px; // to hide shadow of carousel menu when header hidden
+  }
+
   .content {
+    position: relative;
+    z-index: 1;
+
     justify-content: space-between;
+
     padding: 8px 32px;
+
     background: var(--white, #fff);
   }
 

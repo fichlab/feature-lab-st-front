@@ -6,19 +6,26 @@ import s from './SubMenu.module.scss';
 export interface ISubMenuProps {
   className?: string;
   isVisible: boolean;
+  isCompetenciesPage?: boolean;
 }
 
-export const SubMenu: FC<ISubMenuProps> = ({ className = '', isVisible }) => {
+export const SubMenu: FC<ISubMenuProps> = ({
+  className = '',
+  isCompetenciesPage = false,
+  isVisible,
+}) => {
   return (
-    <div
+    <nav
+      aria-label="Компетенции"
       className={cl(
         s.submenu,
         {
           [s.submenu_visible]: isVisible,
+          [s.submenu_hidden]: isCompetenciesPage,
         },
         className,
       )}>
-      <ul className={s.submenuList}>
+      <ul className={cl(s.submenuList)}>
         <li className={s.submenuItem}>
           <NavLink to="/" className={s.submenuLink}>
             Machine learning
@@ -70,6 +77,6 @@ export const SubMenu: FC<ISubMenuProps> = ({ className = '', isVisible }) => {
           </NavLink>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
