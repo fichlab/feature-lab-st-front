@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ROUTE_COMPETENCIES, ROUTE_HOME, SUBROUTE_GAMEDEV } from '../../constants/constants';
-import { AboutUs } from '../../pages/AboutUs/AboutUs';
-import { GameDev } from '../../pages/Competencies/GameDev';
+import { CompetenciesPage } from '../../pages/CompetenciesPage/CompetenciesPage';
+import { GameDev } from '../../pages/GameDev/GameDev';
 import Home from '../../pages/Home/Home';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
@@ -30,7 +30,7 @@ const App: React.FC = () => {
       <Main>
         <Routes>
           <Route path={ROUTE_HOME} element={<Home />} />
-          <Route path={ROUTE_COMPETENCIES} element={<AboutUs />}>
+          <Route path={ROUTE_COMPETENCIES} element={<CompetenciesPage />}>
             <Route path={SUBROUTE_GAMEDEV} element={<GameDev />} />
             <Route path="some-other-route" element={<GameDev />} />
           </Route>
