@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import s from './PageTitle.module.scss';
 
-export interface ILeadSectionProps {
+export interface IPageTitleProps {
   pageTitle: string;
   subTitle: string;
 }
 
-export const PageTitle: FC<ILeadSectionProps> = ({ pageTitle, subTitle }) => {
+export const PageTitle: FC<IPageTitleProps> = ({ pageTitle, subTitle }) => {
   return (
     <>
       <h1 className={s.pageTitle}>{pageTitle}</h1>
