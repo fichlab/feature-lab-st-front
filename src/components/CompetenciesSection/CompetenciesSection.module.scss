@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-// $card-padding-top: 24px;
-// $card-title-font-size: 140px;
-// $card-max-height: calc($card-padding-top + $card-title-font-size - 20px);
-
 .competencies {
   overflow: hidden;
   width: 100%;
@@ -66,16 +62,12 @@
 
   position: relative;
 
-  // overflow-y: hidden;
   display: grid;
   grid-template-columns: 260px max-content auto;
   grid-template-rows: min-content;
   column-gap: 48px;
 
   width: 100%;
-
-  // max-height: 140px;
-
   padding: 30px 100px 0;
 
   background: var(--white, #fff);
@@ -112,17 +104,10 @@
     @media screen and (width <= 1020px) {
       display: none;
     }
-
-    @media screen and (width <= 768px) {
-      display: none;
-    }
   }
 
   &Title {
-    // display: block;
     align-self: end;
-
-    // height: 120px;
 
     font-family: Germano, sans-serif;
     font-size: 120px;
@@ -181,7 +166,7 @@
 
     @media screen and (width <= 1700px) {
       font-size: 100px;
-      line-height: 0.83; /* 100% */
+      line-height: 0.83;
     }
 
     @media screen and (width <= 1275px) {
@@ -294,7 +279,6 @@
   @media screen and (width <= 1275px) {
     grid-template-columns: 240px max-content auto;
     column-gap: 20px;
-    padding: 24px 50px 0;
   }
 
   @media screen and (width <= 1020px) {
@@ -307,13 +291,11 @@
   }
 
   @media screen and (width <= 650px) {
-    grid-template-columns: auto min-content;
     column-gap: 8px;
     padding: 12px 16px 0;
   }
 
   @media screen and (width <= 460px) {
-    column-gap: 8px;
     border-bottom: 1px solid var(--dark-blue, #002d63);
   }
 }
@@ -331,6 +313,7 @@
   }
 }
 
+// animation for hover
 .card:hover .cardFooter,
 .card .cardFooter:hover {
   overflow-y: visible;
