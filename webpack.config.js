@@ -11,6 +11,7 @@ module.exports = (env) => {
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: 'main.js',
+      publicPath: '/',
     },
     mode: 'development',
     devServer: {
