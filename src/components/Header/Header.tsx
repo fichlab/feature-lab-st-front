@@ -1,8 +1,9 @@
 import cl from 'classnames';
 import { useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { competencies } from '../../_mockData/CompetenciesMockData';
 import Logo from '../../assets/svg/logo.svg';
-import { ROUTE_COMPETENCIES, SUBROUTE_GAMEDEV } from '../../constants/constants';
+import { ROUTE_COMPETENCIES } from '../../constants/constants';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
@@ -17,13 +18,8 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const competenciesPages = [
-    ROUTE_COMPETENCIES,
-    SUBROUTE_GAMEDEV,
-    '/gamedev1',
-    '/gamedev2',
-    '/gamedev3',
-  ];
+  const competenciesPages = competencies.map((item) => item.url);
+
   const isCompetenciesPage = competenciesPages.includes(location.pathname);
 
   const handleCompetenciesBtnClick = () => {
@@ -73,13 +69,11 @@ export const Header: React.FC = () => {
                   [s.linkActive]: isCompetenciesPage,
                 })}>
                 Компетенции
-                {!isCompetenciesPage && (
-                  <Arrow
-                    className={cl(s.arrow, {
-                      [s.arrow_rotate]: isSubMenuVisible,
-                    })}
-                  />
-                )}
+                <Arrow
+                  className={cl(s.arrow, {
+                    [s.arrow_rotate]: isSubMenuVisible,
+                  })}
+                />
               </button>
               <SubMenu isVisible={isSubMenuVisible} isCompetenciesPage={isCompetenciesPage} />
             </li>
