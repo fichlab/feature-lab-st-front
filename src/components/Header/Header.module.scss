@@ -31,6 +31,8 @@
 
   &_bg_white {
     background: var(--white, #fff);
+    clip-path: inset(0 0 -100px 0); // cut shadow from top, right, left sides
+    box-shadow: 0 10px 20px 0 rgb(0 45 99 / 30%);
   }
 }
 
