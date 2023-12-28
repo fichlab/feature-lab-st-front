@@ -31,7 +31,9 @@
 
   &_bg_white {
     background: var(--white, #fff);
-    clip-path: inset(0 0 -100px 0); // cut shadow from top, right, left sides
+
+    // cut shadow from top, right, left sides. Should be big enough for subMenu
+    clip-path: inset(0 0 -1000px 0);
     box-shadow: 0 10px 20px 0 rgb(0 45 99 / 30%);
   }
 }

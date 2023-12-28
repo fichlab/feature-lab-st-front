@@ -1,5 +1,5 @@
 import cl from 'classnames';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { competencies } from '../../_mockData/CompetenciesMockData';
 import Logo from '../../assets/svg/logo.svg';
@@ -18,14 +18,21 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // hide subMenu with header when scrolling down
+  useEffect(() => {
+    if (isSubMenuVisible && scrollDirection === 'down') {
+      setSubMenuVisible(false);
+    }
+  }, [scrollDirection, isSubMenuVisible]);
+
   const competenciesPages = competencies.map((item) => item.url);
 
   const isCompetenciesPage = competenciesPages.includes(location.pathname);
 
   const handleCompetenciesBtnClick = () => {
-    // On mobile, a double tap is needed to navigate to /about-us.
+    // On mobile, a double tap is needed to navigate to /competencies.
     // The first tap is the same as a hover on descktop; it will do nothing but open the sub-menu.
-    // The second tap will navigate to /about-us.
+    // The second tap will navigate to /competencies.
     if (window.innerWidth > 768 || isSubMenuVisible) {
       navigate(ROUTE_COMPETENCIES);
     }
@@ -75,7 +82,7 @@ export const Header: React.FC = () => {
                   })}
                 />
               </button>
-              <SubMenu isVisible={isSubMenuVisible} isCompetenciesPage={isCompetenciesPage} />
+              <SubMenu isVisible={isSubMenuVisible} />
             </li>
             <li className={cl(s.listItem)}>
               <NavLink
