@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import s from './LeadSection.module.scss';
 
-import { leadSectionMockData } from './LeadSectionMockData';
+import { leadSectionMockData } from '../../_mockData/LeadSectionMockData';
 
 export interface ILeadSectionProps {
   className?: string;
