@@ -1,12 +1,19 @@
 .plusIcon {
   cursor: pointer;
+
+  width: 80px;
+  height: 80px;
+
   line-height: 0;
+
   border-radius: 60px;
+
   transition: 0.3s box-shadow ease-in;
 
   & > svg {
     width: 100%;
     height: 100%;
+    transition: 0.3s transform;
   }
 
   &:focus,
@@ -14,6 +21,14 @@
     background: var(--white);
     box-shadow: var(--shadow-box-shadow);
   }
+}
+
+.pressed {
+  transform: rotate(45deg);
+}
+
+.unpressed {
+  transform: rotate(0);
 }
 
 @media screen and (width <= 1280px) {
