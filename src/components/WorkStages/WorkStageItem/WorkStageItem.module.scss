@@ -1,0 +1,76 @@
+.stage {
+  overflow-y: hidden;
+  border-top: 2px solid var(--dark-blue, #002d63);
+
+  &Wrapper {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    padding-top: 22px;
+  }
+
+  &Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &Number {
+    width: 100%;
+    max-width: 200px;
+
+    color: var(--white, #fff);
+
+    transition: all 0.2s;
+
+    -webkit-text-stroke: 3.5px var(--darkblue);
+
+    &__filled {
+      color: var(--dark-blue, #002d63);
+
+      -webkit-text-stroke: 3.5px var(--white, #fff);
+    }
+  }
+
+  &Text {
+    display: flex;
+    width: 100%;
+    max-width: 1290px;
+
+    &__hidden {
+      display: flex;
+      column-gap: 40px;
+      max-width: 1290px;
+    }
+  }
+}
+
+.extraPadding {
+  padding-bottom: 32px;
+}
+
+.content {
+  flex-basis: 50%;
+  max-width: 620px;
+}
+
+.dummyPlus {
+  width: 80px;
+}
+
+.inactive {
+  overflow-y: hidden;
+  max-height: 0;
+  padding-top: 0;
+  transition: all 0.4s;
+}
+
+.active {
+  overflow-y: visible;
+
+  max-height: 300px;
+  padding-top: 9px;
+  padding-bottom: 38px;
+
+  transition: all 0.4s;
+}
