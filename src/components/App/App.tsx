@@ -1,9 +1,16 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ROUTE_COMPETENCIES, ROUTE_HOME, SUBROUTE_GAMEDEV } from '../../constants/constants';
+import {
+  ROUTE_COMPETENCIES,
+  ROUTE_HOME,
+  ROUTE_PRODUCTS,
+  SUBROUTE_DOCSHABLON,
+  SUBROUTE_GAMEDEV,
+} from '../../constants/constants';
 import { CompetenciesPage } from '../../pages/CompetenciesPage/CompetenciesPage';
 import { GameDev } from '../../pages/GameDev/GameDev';
 import Home from '../../pages/Home/Home';
+import { ProductPage } from '../../pages/ProductPage/ProductPage';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import Main from '../Main/Main';
@@ -33,6 +40,11 @@ const App: React.FC = () => {
           <Route path={ROUTE_COMPETENCIES} element={<CompetenciesPage />}>
             <Route path={SUBROUTE_GAMEDEV} element={<GameDev />} />
             <Route path="some-other-route" element={<GameDev />} />
+          </Route>
+
+          <Route path={ROUTE_PRODUCTS} element={<ProductPage />}>
+            <Route path={SUBROUTE_DOCSHABLON} element={<ProductPage />} />
+            <Route path="some-other-product-subroute" element={<ProductPage />} />
           </Route>
         </Routes>
       </Main>

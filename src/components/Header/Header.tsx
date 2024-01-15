@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { competencies } from '../../_mockData/CompetenciesMockData';
 import Logo from '../../assets/svg/logo.svg';
-import { ROUTE_COMPETENCIES } from '../../constants/constants';
+import { ROUTE_COMPETENCIES, ROUTE_DOCSHABLON } from '../../constants/constants';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
             </li>
             <li className={cl(s.listItem)}>
               <NavLink
-                to="/some-route2"
+                to={ROUTE_DOCSHABLON}
                 className={({ isActive }) => (isActive ? s.linkActive : '')}>
                 Продукты
               </NavLink>
