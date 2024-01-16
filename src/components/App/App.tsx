@@ -7,8 +7,8 @@ import {
   SUBROUTE_DOCSHABLON,
   SUBROUTE_GAMEDEV,
 } from '../../constants/constants';
+import { CompetencePage } from '../../pages/CompetencePage/CompetencePage';
 import { CompetenciesPage } from '../../pages/CompetenciesPage/CompetenciesPage';
-import { GameDev } from '../../pages/GameDev/GameDev';
 import Home from '../../pages/Home/Home';
 import { ProductPage } from '../../pages/ProductPage/ProductPage';
 import Footer from '../Footer/Footer';
@@ -38,8 +38,8 @@ const App: React.FC = () => {
         <Routes>
           <Route path={ROUTE_HOME} element={<Home />} />
           <Route path={ROUTE_COMPETENCIES} element={<CompetenciesPage />}>
-            <Route path={SUBROUTE_GAMEDEV} element={<GameDev />} />
-            <Route path="some-other-route" element={<GameDev />} />
+            <Route path={SUBROUTE_GAMEDEV} element={<CompetencePage />} />
+            <Route path="some-other-route" element={<CompetencePage />} />
           </Route>
 
           <Route path={ROUTE_PRODUCTS} element={<ProductPage />}>
