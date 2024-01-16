@@ -10,7 +10,7 @@ const Home: FC = () => {
       <PromoSection />
       <CompetenciesSection />
       <LabSection />
-      <ProductsSection />
+      <ProductsSection title="Продуктовая разработка" />
     </>
   );
 };

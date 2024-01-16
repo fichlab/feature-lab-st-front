@@ -7,12 +7,13 @@ import { products } from '../../_mockData/productsMockData';
 
 export interface IProductsSectionProps {
   className?: string;
+  title: string;
 }
 
-export const ProductsSection: FC<IProductsSectionProps> = ({ className = '' }) => {
+export const ProductsSection: FC<IProductsSectionProps> = ({ className = '', title }) => {
   return (
     <section className={cl(s.productsSection, className)}>
-      <h2 className={s.sectionTitle}>Продуктовая разработка</h2>
+      <h2 className={s.sectionTitle}>{title}</h2>
 
       <ul className={s.list}>
         {products.map((product) => (
