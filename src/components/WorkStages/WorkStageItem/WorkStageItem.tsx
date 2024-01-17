@@ -36,8 +36,8 @@ export const WorkStageItem: FC<WorkStageItemProps> = ({ stageNum, stage, classNa
           </div>
         </div>
         <div className={cl(s.stageRow)}>
-          <div className={s.stageNumber} />
-          <div className={s.stageText}>
+          <div className={cl(s.stageNumber, s.collapsed)} />
+          <div className={cl(s.stageText, s.stageText__tel)}>
             <div className={s.stageText__hidden}>
               <Text
                 className={cl(s.content, s.inactive, isActive && s.active)}
@@ -53,7 +53,7 @@ export const WorkStageItem: FC<WorkStageItemProps> = ({ stageNum, stage, classNa
               </Text>
             </div>
           </div>
-          <div className={s.dummyPlus} />
+          <div className={cl(s.dummyPlus, s.collapsed)} />
         </div>
       </div>
     </div>
