@@ -23,5 +23,6 @@ const stage = {
 export const Normal: Story = {
   args: {
     stage,
+    stageNum: 1,
   },
 };
