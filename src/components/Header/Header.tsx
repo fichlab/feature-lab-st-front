@@ -8,7 +8,6 @@ import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { HamburgerBtn } from './HamburgerBtn/HamburgerBtn';
 import s from './Header.module.scss';
 import { SubMenu } from './SubMenu/SubMenu';
-import { SubMenuCarousel } from './SubMenuCarousel/SubMenuCarousel';
 import Arrow from './svg/Icon-arrow.svg?svgr';
 
 export const Header: React.FC = () => {
@@ -47,6 +46,7 @@ export const Header: React.FC = () => {
   }, []);
 
   const competenciesPages = competencies.map((item) => item.url);
+  competenciesPages.push(ROUTE_COMPETENCIES);
 
   const isCompetenciesPage = competenciesPages.includes(location.pathname);
 
@@ -139,7 +139,6 @@ export const Header: React.FC = () => {
 
         <HamburgerBtn onClick={handleBurgerBtnClick} />
       </div>
-      {isCompetenciesPage && <SubMenuCarousel />}
     </header>
   );
 };
