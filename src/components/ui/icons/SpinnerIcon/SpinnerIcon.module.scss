@@ -38,12 +38,12 @@
 
 .spinnerIcon {
   line-height: 0;
-  animation: rotate 2s steps(1) infinite;
-  animation-direction: reverse;
 
   & > svg {
     width: 100%;
     height: 100%;
+    animation: rotate 2s steps(1) infinite;
+    animation-direction: reverse;
   }
 
   & path {
