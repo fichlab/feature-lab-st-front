@@ -41,12 +41,12 @@
 
   @media screen and (width <= 430px) {
     grid-template-columns: auto;
+    row-gap: 32px;
   }
 
   @media screen and (width <= 360px) {
     grid-template-columns: auto;
     grid-template-rows: max-content max-content max-content;
-    row-gap: 48px;
   }
 }
 
