@@ -13,9 +13,9 @@ export const LeadSectionCards: FC<ILeadSectionCardsProps> = () => (
         <p className={cl(s.cardTitleBig)}>Сайт</p>
       </div>
       <p className={cl(s.cardText)}>
-        Запущен и его можно посмотреть по{' '}
+        Запущен и его можно посмотреть{' '}
         <a href={leadSectionMockData.url} className={s.link}>
-          ссылке
+          по ссылке
         </a>
       </p>
     </li>
