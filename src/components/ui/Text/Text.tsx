@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cl from 'classnames';
 import s from './Text.module.scss';
 
@@ -22,7 +22,7 @@ export type TextProps = {
   outlined?: boolean;
 };
 
-export const Text: React.FC<TextProps> = ({
+const TextWithoutMemo: React.FC<TextProps> = ({
   className = '',
   view = 'text-3',
   tag = 'div',
@@ -50,3 +50,5 @@ export const Text: React.FC<TextProps> = ({
     </Tag>
   );
 };
+
+export const Text = memo(TextWithoutMemo);
