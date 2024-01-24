@@ -12,7 +12,7 @@ export interface WorkStagesProps {
 export const WorkStages: FC<WorkStagesProps> = ({ className = '' }) => {
   return (
     <section className={cl(s.stages, className)}>
-      <Text view="title-3" className={s.stagesTitle} tag="h3">
+      <Text view="germano-3" className={s.stagesTitle} tag="h2">
         Этапы работы
       </Text>
       {workStagesData.map((stage, index) => (
