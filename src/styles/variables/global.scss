@@ -71,6 +71,7 @@
 
   /* Size */
   --el-max-width: 1720px;
+  --section-title-font-size: 64px;
 
   @media screen and (width <= 1920px) {
     --el-max-width: calc(1180px + (1720 - 1180) * ((100vw - 1280px) / (1920 - 1280)));
