@@ -154,6 +154,10 @@
       font-size: calc(40px + (66 - 40) * ((100vw - 360px) / (768 - 360)));
 
       -webkit-text-stroke: 2px var(--darkblue);
+
+      &__filled {
+        -webkit-text-stroke: initial;
+      }
     }
 
     &Text {

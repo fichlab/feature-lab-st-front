@@ -23,12 +23,10 @@ export const WorkStageItem: FC<WorkStageItemProps> = ({ stageNum, stage, classNa
     <div className={cl(s.stage, className)}>
       <div className={s.stageWrapper}>
         <div className={cl(s.stageRow, s.extraPadding)}>
-          <Text
-            className={cl(s.stageNumber, isActive && s.stageNumber__filled)}
-            view="title-molot-1">
+          <Text className={cl(s.stageNumber, isActive && s.stageNumber__filled)} view="molot-1">
             {stageNum < 10 ? `0${stageNum}` : String(stageNum)}
           </Text>
-          <Text className={s.stageText} tag="h3" view="title-1">
+          <Text className={s.stageText} tag="h3" view="germano-1">
             {stage.title}
           </Text>
           <div role="presentation" className={s.dummyPlus} onClick={() => setIsActive(!isActive)}>
@@ -41,13 +39,13 @@ export const WorkStageItem: FC<WorkStageItemProps> = ({ stageNum, stage, classNa
             <div className={s.stageText__hidden}>
               <Text
                 className={cl(s.content, s.inactive, isActive && s.active)}
-                view="text-1"
+                view="gost-1"
                 tag="p">
                 {stage.text1}
               </Text>
               <Text
                 className={cl(s.content, s.inactive, isActive && s.active)}
-                view="text-1"
+                view="gost-1"
                 tag="p">
                 {stage.text2}
               </Text>
