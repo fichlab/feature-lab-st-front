@@ -9,23 +9,18 @@
   border-bottom: 2px solid var(--dark-blue, #002d63);
 
   &Title {
-    max-width: 1720px;
-    margin: 0 auto;
     padding-bottom: 100px;
 
     @media screen and (width <= 1920px) {
-      max-width: calc(1180px + (1720 - 1180) * ((100vw - 1280px) / (1920 - 1280)));
       padding-bottom: calc(80px + (100 - 80) * ((100vw - 1280px) / (1920 - 1280)));
     }
 
     @media screen and (width <= 1280px) {
-      max-width: calc(704px + (1180 - 704) * ((100vw - 768px) / (1280 - 768)));
       padding-bottom: calc(52px + (80 - 52) * ((100vw - 768px) / (1280 - 768)));
       font-size: calc(48px + (64 - 48) * ((100vw - 768px) / (1280 - 768)));
     }
 
     @media screen and (width <= 768px) {
-      max-width: calc(328px + (704 - 328) * ((100vw - 360px) / (768 - 360)));
       padding-bottom: calc(32px + (52 - 32) * ((100vw - 360px) / (768 - 360)));
       font-size: calc(24px + (48 - 24) * ((100vw - 360px) / (768 - 360)));
     }
