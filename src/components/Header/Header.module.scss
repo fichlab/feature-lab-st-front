@@ -160,13 +160,11 @@
   }
 
   @media screen and (width <= 1060px) {
-    font-size: calc(24px * 0.8);
-    line-height: calc(1.17 * 0.8);
+    font-size: 19px;
   }
 
   @media screen and (width <= 768px) {
     font-size: 24px;
-    line-height: 1.17; // 28px;
   }
 }
 
