@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ResultSliderImgSrcArr } from '../../_mockData/ResultPreviewSliderData';
 import brokenScreen from '../../assets/svg/broken_screen.svg';
 import LapTop from '../../assets/svg/laptop.svg?svgr';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
 import { ArrowInCircleIcon, SpinnerIcon } from '../ui/icons';
 import s from './ResultPreviewSection.module.scss';
 
@@ -58,7 +59,8 @@ export const ResultPreviewSection: FC<IResultPreviewSectionProps> = ({ className
 
   return (
     <section className={cl(s.section, className)}>
-      <h2 className={s.sectionTitle}>Результат</h2>
+      <SectionTitle text="Результат" />
+
       <div className={s.slider}>
         <LapTop className={s.laptop} />
 

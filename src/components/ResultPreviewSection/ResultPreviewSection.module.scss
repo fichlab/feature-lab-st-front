@@ -15,39 +15,6 @@
   }
 }
 
-.sectionTitle {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  padding: 0 0 0 100px;
-
-  font-family: Germano, sans-serif;
-  font-size: 64px;
-  font-weight: 300;
-  font-style: normal;
-  line-height: 1; /* 100% 64px */
-  color: var(--darkblue, #002d63);
-  text-align: left;
-
-  @media screen and (width <= 1280px) {
-    padding: 0 0 0 50px;
-  }
-
-  @media screen and (width <= 768px) {
-    padding: 0 0 0 32px;
-    font-size: 48px;
-  }
-
-  @media screen and (width <= 650px) {
-    font-size: 24px;
-  }
-
-  @media screen and (width <= 360px) {
-    padding: 0 0 0 16px;
-    font-size: 24px;
-  }
-}
-
 .slider {
   --slide-width: 55%;
   --slide-height: 680px;
