@@ -86,9 +86,9 @@
 }
 
 .headline {
-  font-family: var(--title-h-3-font-family, 'Germano-Regular', sans-serif);
-  font-size: var(--title-h-3-font-size, 64px);
-  font-weight: var(--title-h-3-font-weight, 400);
+  font-family: Germano-Regular, sans-serif;
+  font-size: 64px;
+  font-weight: 400;
   line-height: 1;
   color: var(--white, #fff);
   text-align: left;
@@ -139,7 +139,7 @@
   }
 
   .headline {
-    font-size: var(--title-h-4-font-size, 48px);
+    font-size: 48px;
   }
 }
 
@@ -191,7 +191,7 @@
 
 @media screen and (width <= 500px) {
   .headline {
-    font-size: var(--title-tel-h-1-font-size, 40px);
+    font-size: 40px;
   }
 }
 

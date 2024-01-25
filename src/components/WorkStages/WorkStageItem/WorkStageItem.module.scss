@@ -138,8 +138,8 @@
   .content {
     flex-basis: 50%;
     max-width: 419px;
-    font-size: var(--text-2-font-size, 24px);
-    line-height: var(--text-2-line-height, 28px);
+    font-size: 24px;
+    line-height: 1.17; // 28px;
   }
 }
 
@@ -193,8 +193,8 @@
 
   .content {
     max-width: 494px;
-    font-size: var(--text-3-font-size, 20px);
-    line-height: var(--text-3-line-height, 24px);
+    font-size: 20px;
+    line-height: 1.2; // 24px;
   }
 }
 
