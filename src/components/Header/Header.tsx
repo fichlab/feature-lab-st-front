@@ -69,75 +69,77 @@ export const Header: React.FC = () => {
         [s.header_hidden]: !isNavMobileOpen && scrollDirection === 'down',
       })}>
       <div
-        className={cl(s.content, {
-          [s.content_bg_white]: currentScrollY > 1,
+        className={cl(s.headerContainer, {
+          [s.headerContainer_bg_white]: currentScrollY > 1,
         })}>
-        <Link to="/" className={s.logo}>
-          <img title="Вернуться на главную" className={s.logo} src={Logo} alt="Logo" />
-        </Link>
+        <div className={cl(s.content)}>
+          <Link to="/" className={s.logo}>
+            <img title="Вернуться на главную" className={s.logo} src={Logo} alt="Logo" />
+          </Link>
 
-        <nav
-          aria-label="Основное меню"
-          className={cl(s.nav, { [s.navProfile]: false, [s.navMobileOpen]: isNavMobileOpen })}
-          id="navHeaderMenu">
-          <ul className={cl(s.list)}>
-            <li className={cl(s.listItem, s.linkToMainPage)}>
-              <NavLink to="/" className={({ isActive }) => (isActive ? s.linkActive : '')}>
-                Главная
-              </NavLink>
-            </li>
+          <nav
+            aria-label="Основное меню"
+            className={cl(s.nav, { [s.navProfile]: false, [s.navMobileVisible]: isNavMobileOpen })}
+            id="navHeaderMenu">
+            <ul className={cl(s.list)}>
+              <li className={cl(s.listItem, s.linkToMainPage)}>
+                <NavLink to="/" className={({ isActive }) => (isActive ? s.linkActive : '')}>
+                  Главная
+                </NavLink>
+              </li>
 
-            <li
-              className={cl(s.listItem, s.listItemSubMenu)}
-              onMouseEnter={() => setSubMenuVisible(true)}
-              onMouseLeave={() => setSubMenuVisible(false)}>
-              <button
-                type="button"
-                onClick={handleCompetenciesBtnClick}
-                className={cl(s.btnSubmenuOpen, {
-                  [s.linkActive]: isCompetenciesPage,
-                })}>
-                Компетенции
-                <Arrow
-                  className={cl(s.arrow, {
-                    [s.arrow_rotate]: isSubMenuVisible,
-                  })}
-                />
-              </button>
-              <SubMenu isVisible={isSubMenuVisible} />
-            </li>
-            <li className={cl(s.listItem)}>
-              <NavLink
-                to="/some-route1"
-                className={({ isActive }) => (isActive ? s.linkActive : '')}>
-                Лаборатория
-              </NavLink>
-            </li>
-            <li className={cl(s.listItem)}>
-              <NavLink
-                to={ROUTE_DOCSHABLON}
-                className={({ isActive }) => (isActive ? s.linkActive : '')}>
-                Продукты
-              </NavLink>
-            </li>
-            <li className={cl(s.listItem)}>
-              <NavLink
-                to="/some-route3"
-                className={({ isActive }) => (isActive ? s.linkActive : '')}>
-                Контакты
-              </NavLink>
-            </li>
-            <li className={cl(s.listItem)}>
-              <NavLink
-                to="/some-route4"
-                className={({ isActive }) => (isActive ? s.linkActive : '')}>
-                Личный кабинет
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+              <li
+                className={cl(s.listItem, s.listItemSubMenu)}
+                onMouseEnter={() => setSubMenuVisible(true)}
+                onMouseLeave={() => setSubMenuVisible(false)}>
+                <button
+                  type="button"
+                  onClick={handleCompetenciesBtnClick}
+                  className={cl(s.btnSubmenuOpen, {
+                    [s.linkActive]: isCompetenciesPage,
+                  })}>
+                  Компетенции
+                  <Arrow
+                    className={cl(s.arrow, {
+                      [s.arrow_rotate]: isSubMenuVisible,
+                    })}
+                  />
+                </button>
+                <SubMenu isVisible={isSubMenuVisible} />
+              </li>
+              <li className={cl(s.listItem)}>
+                <NavLink
+                  to="/some-route1"
+                  className={({ isActive }) => (isActive ? s.linkActive : '')}>
+                  Лаборатория
+                </NavLink>
+              </li>
+              <li className={cl(s.listItem)}>
+                <NavLink
+                  to={ROUTE_DOCSHABLON}
+                  className={({ isActive }) => (isActive ? s.linkActive : '')}>
+                  Продукты
+                </NavLink>
+              </li>
+              <li className={cl(s.listItem)}>
+                <NavLink
+                  to="/some-route3"
+                  className={({ isActive }) => (isActive ? s.linkActive : '')}>
+                  Контакты
+                </NavLink>
+              </li>
+              <li className={cl(s.listItem)}>
+                <NavLink
+                  to="/some-route4"
+                  className={({ isActive }) => (isActive ? s.linkActive : '')}>
+                  Личный кабинет
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
 
-        <HamburgerBtn onClick={handleBurgerBtnClick} />
+          <HamburgerBtn onClick={handleBurgerBtnClick} />
+        </div>
       </div>
     </header>
   );
