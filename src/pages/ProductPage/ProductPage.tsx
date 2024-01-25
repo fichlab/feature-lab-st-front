@@ -2,17 +2,23 @@ import { FC } from 'react';
 import { LeadSection } from '../../components/LeadSection/LeadSection';
 import { PageTitle } from '../../components/PageTitle/PageTitle';
 import { ResultPreviewSection } from '../../components/ResultPreviewSection/ResultPreviewSection';
+import { WorkStages } from '../../components/WorkStages/WorkStages';
+import s from './ProductPage.module.scss';
 
 export const ProductPage: FC = () => {
   return (
     <>
-      <PageTitle pageTitle="Какой-то ёёёйййй" subTitle="Какой-то текст под заголовком" />
+      <PageTitle
+        className={s.pageTitle}
+        pageTitle="Какой-то ёёёйййй"
+        subTitle="Какой-то текст под заголовком"
+      />
 
-      <LeadSection />
+      <LeadSection className={s.pageSection} />
 
-      {/* Секция - Этабы работы */}
+      <WorkStages className={s.pageSection} />
 
-      <ResultPreviewSection />
+      <ResultPreviewSection className={s.pageSection} />
     </>
   );
 };
