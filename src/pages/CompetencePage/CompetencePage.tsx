@@ -2,17 +2,18 @@ import { FC } from 'react';
 import { LeadSection } from '../../components/LeadSection/LeadSection';
 import { PageTitle } from '../../components/PageTitle/PageTitle';
 import { ProductsSection } from '../../components/ProductsSection/ProductsSection';
+import s from './CompetencePage.module.scss';
 
 export const CompetencePage: FC = () => {
   return (
     <>
-      <PageTitle pageTitle="Gamedev" subTitle="Расшифровка аббревиатуры" />
+      <PageTitle className={s.pageTitle} pageTitle="Gamedev" subTitle="Расшифровка аббревиатуры" />
 
-      <LeadSection />
+      <LeadSection className={s.pageSection} />
 
       {/* слайдер команды */}
 
-      <ProductsSection title="Портфолио" />
+      <ProductsSection className={s.pageSection} title="Портфолио" />
     </>
   );
 };
