@@ -4,12 +4,17 @@
 }
 
 .labSection {
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   width: 100%;
+  padding: 0 0 50px;
+
+  @media screen and (width <= 1280px) {
+    padding: 0;
+  }
 }
 
 .sectionContent {
