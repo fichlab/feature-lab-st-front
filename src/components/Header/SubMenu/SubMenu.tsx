@@ -1,82 +1,58 @@
 import cl from 'classnames';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ROUTE_GAMEDEV } from '../../../constants/constants';
+import { v4 as uuidv4 } from 'uuid';
+import { competencies } from '../../../_mockData/CompetenciesMockData';
 import s from './SubMenu.module.scss';
 
 export interface ISubMenuProps {
   className?: string;
   isVisible: boolean;
-  isCompetenciesPage?: boolean;
 }
 
-export const SubMenu: FC<ISubMenuProps> = ({
-  className = '',
-  isCompetenciesPage = false,
-  isVisible,
-}) => {
+export const SubMenu: FC<ISubMenuProps> = ({ className = '', isVisible }) => {
+  // prevent the flickering transition effect of submenu when the viewport is resized
+  useEffect(() => {
+    const handleResize = () => {
+      const submenuEl = document.getElementById('navSubmenu');
+
+      if (submenuEl) {
+        submenuEl.classList.add(s.stopTransition);
+
+        setTimeout(() => {
+          submenuEl.classList.remove(s.stopTransition);
+        }, 100);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <nav
       aria-label="Компетенции"
+      id="navSubmenu"
       className={cl(
         s.submenu,
         {
-          [s.submenu_visible]: isVisible,
-          [s.submenu_hidden]: isCompetenciesPage,
+          [s.submenuVisible]: isVisible,
         },
         className,
       )}>
       <ul className={cl(s.submenuList)}>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Machine learning
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Web-разработка
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Управление данными
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Разработка приложений
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Мобильная разработка
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Blockchain
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to={ROUTE_GAMEDEV} className={s.submenuLink}>
-            Gamedev
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            ML&amp;AI
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            Данные
-          </NavLink>
-        </li>
-        <li className={s.submenuItem}>
-          <NavLink to="/" className={s.submenuLink}>
-            КХД
-          </NavLink>
-        </li>
+        {competencies.map((item) => (
+          <li className={s.submenuItem} key={uuidv4()}>
+            <NavLink
+              to={item.url}
+              className={({ isActive }) => cl(s.submenuLink, { [s.submenuLinkActive]: isActive })}>
+              {item.title}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
